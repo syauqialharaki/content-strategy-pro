@@ -279,6 +279,24 @@
       }
     }
 
+    /* Infinite Marquee Social Proof */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 30s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    .marquee-fade {
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .cta-shine::after {
         animation: none;
@@ -490,155 +508,38 @@
       </p>
     </section>
 
-    <!-- PROOF / AI COMPARISON SECTION -->
-    <section class="mt-20 fade-up" id="proof">
-      <div class="text-center">
-        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bukti Lewat Perbandingan</p>
-        <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          Dua Orang. AI yang Sama. <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Hasilnya Bisa Jauh Berbeda.</span>
-        </h2>
-        <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
-          Bedanya bukan siapa yang lebih jago bikin prompt. Yang satu langsung minta ide. Yang satu masuk ke AI dengan
-          arah promosi yang sudah dibedah lebih dulu.
-        </p>
-      </div>
 
-      <div class="mobile-copy-rail mt-8 rounded-3xl border orange-line bg-space-900/95 p-5 sm:p-7 shadow-glow">
-        <!-- Context Card -->
-        <div class="rounded-xl border hairline bg-black/40 p-4 text-left mb-6">
-          <div class="text-[10px] font-mono font-bold uppercase text-sunset-300">📦 Contoh Produk yang Sama</div>
-          <p class="mt-1 text-xs sm:text-sm font-semibold text-zinc-200">
-            Sambal bawang rumahan 150 ml · pedas gurih · praktis untuk lauk sehari-hari · Rp28.000.
-          </p>
-        </div>
-
-        <!-- Person A -->
-        <div class="soft-card rounded-2xl p-4 sm:p-5 border-l-4 border-l-zinc-600 text-left">
-          <div class="flex items-center justify-between gap-3">
-            <span
-              class="rounded-full bg-zinc-800 border hairline px-2.5 py-1 text-[10px] font-mono font-bold uppercase text-zinc-400">Orang
-              A · Langsung Tanya AI</span>
-          </div>
-          <h3 class="mt-2 font-bold text-white text-sm sm:text-base">“Buatkan ide konten untuk jualan sambal saya.”</h3>
-
-          <div
-            class="mt-3 rounded-xl bg-black/60 border hairline p-3 font-mono text-[11px] sm:text-xs text-zinc-400 leading-relaxed">
-            Buatkan 10 ide konten Instagram untuk promosi sambal bawang rumahan saya.
-          </div>
-
-          <ul class="mt-3 space-y-2 text-xs sm:text-sm text-zinc-400">
-            <li class="flex items-start gap-2"><span class="text-zinc-500">•</span><span>5 alasan pecinta pedas wajib
-                coba sambal ini.</span></li>
-            <li class="flex items-start gap-2"><span class="text-zinc-500">•</span><span>Behind the scenes proses
-                pembuatan sambal.</span></li>
-            <li class="flex items-start gap-2"><span class="text-zinc-500">•</span><span>Promo diskon khusus minggu
-                ini.</span></li>
-            <li class="flex items-start gap-2"><span class="text-zinc-500">•</span><span>Testimoni pelanggan setelah
-                mencoba.</span></li>
-            <li class="flex items-start gap-2"><span class="text-zinc-500">•</span><span>Ide menu yang cocok dimakan
-                dengan sambal.</span></li>
-          </ul>
-        </div>
-
-        <!-- VS Divider -->
-        <div class="flex items-center justify-center my-4">
-          <span
-            class="rounded-full bg-sunset-500/20 border orange-line px-4 py-1 text-xs font-mono font-black text-sunset-300">VS</span>
-        </div>
-
-        <!-- Person B -->
-        <div class="orange-card rounded-2xl p-4 sm:p-5 border-l-4 border-l-sunset-500 text-left shadow-glow">
-          <div class="flex items-center justify-between gap-3">
-            <span
-              class="rounded-full bg-sunset-500/20 border orange-line px-2.5 py-1 text-[10px] font-mono font-bold uppercase text-sunset-300">Orang
-              B · Pakai Arah dari Content Strategy Pro</span>
-          </div>
-          <h3 class="mt-2 font-bold text-white text-sm sm:text-base">Bukan cuma minta ide. AI sudah diberi konteks “apa
-            yang mau dijual lewat kontennya”.</h3>
-
-          <div
-            class="mt-3 rounded-xl bg-black/70 border orange-line p-3.5 font-mono text-[11px] sm:text-xs text-sunset-200 leading-relaxed">
-            Gunakan brief strategi ini untuk membuat konten: buyer sering punya lauk sederhana tapi makan terasa
-            membosankan; produk diposisikan sebagai pelengkap praktis yang membuat menu rumahan terasa lebih “jadi”;
-            fokus pada situasi telur/nasi hangat, akhir bulan, bekal cepat, dan lauk seadanya; hindari mulai dari
-            diskon.
-          </div>
-
-          <ul class="mt-3.5 space-y-2.5 text-xs sm:text-sm text-zinc-200">
-            <li class="flex items-start gap-2">
-              <span class="text-sunset-400 font-bold">🎯</span>
-              <span><strong class="text-white">Situasi:</strong> “Lauknya cuma telur lagi?” — angkat rasa bosan sebelum
-                menawarkan sambal.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-sunset-400 font-bold">🧭</span>
-              <span><strong class="text-white">Angle:</strong> Menu sederhana tidak harus terasa seadanya.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-sunset-400 font-bold">🎣</span>
-              <span><strong class="text-white">Hook:</strong> “Yang bikin makan telur lagi terasa beda kadang bukan lauk
-                barunya.”</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-sunset-400 font-bold">🎬</span>
-              <span><strong class="text-white">Demo Content:</strong> Nasi hangat + telur → tambah sambal → fokus pada
-                momen makan, bukan daftar fitur.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-sunset-400 font-bold">📣</span>
-              <span><strong class="text-white">CTA:</strong> Ajak cek varian/rasa setelah relevansi produknya sudah
-                terasa.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Takeaway Box -->
-        <div class="mt-5 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-center">
-          <p class="text-xs sm:text-sm text-zinc-200 font-medium">
-            AI-nya bisa sama. Yang membedakan adalah <span class="text-sunset-300 font-black">arah sebelum meminta AI
-              membuat konten.</span>
-          </p>
-        </div>
-
-        <p class="mt-3 text-center text-[10.5px] text-zinc-500">
-          Contoh simulasi untuk memperlihatkan perbedaan struktur input. Output AI dapat berbeda tergantung model,
-          konteks, dan informasi produk.
-        </p>
-      </div>
-    </section>
 
     <!-- NOT IDEA GENERATOR / REASSURANCE -->
     <section class="mt-20 fade-up">
       <div class="text-center">
         <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bukan Generator Ide</p>
         <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          Bukan Sekadar “Cari Ide Konten yang Banyak”.
+          Bukan Sekadar "Cari Ide Konten". <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Tapi Menentukan Arah yang Memicu Orderan.</span>
         </h2>
         <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
-          Karena masalahnya bukan kekurangan ide. Masalahnya: ide itu mau membawa produk Anda ke arah mana?
+          Masalahnya bukan kekurangan ide. Tapi ide sebanyak apa pun tidak berguna kalau tidak ada arah penjualannya.
         </p>
       </div>
 
       <div class="orange-card rounded-3xl p-6 sm:p-8 text-center mt-7 shadow-glow">
         <h3 class="text-xl sm:text-2xl font-black text-white">
-          Anda Tidak Lagi Membuka Canva atau ChatGPT dengan Kepala Kosong.
+          Tidak Ada Lagi Momen Duduk Melamun di Depan Canva atau ChatGPT.
         </h3>
         <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-300 max-w-xl mx-auto">
-          Anda sudah punya pegangan tentang pesan, sudut, dan konteks yang ingin dibawa. Jadi AI dan tools produksi
-          dipakai untuk mengeksekusi arah — bukan menebak arahnya dari nol.
+          Kerangka strateginya sudah siap di tangan. Jadi AI dan Canva cukup dipakai untuk merapikan &amp; mengeksekusi — bukan tempat tebak-tebakan dari nol.
         </p>
 
         <div class="mt-6 flex flex-wrap justify-center items-center gap-2 text-xs sm:text-sm font-bold">
-          <span class="rounded-full border hairline bg-black/40 px-3.5 py-1.5 text-zinc-300">Punya arah</span>
+          <span class="rounded-full border hairline bg-black/40 px-3.5 py-1.5 text-zinc-300">Arah Jelas</span>
           <span class="flow-arrow">→</span>
-          <span class="rounded-full border hairline bg-black/40 px-3.5 py-1.5 text-zinc-300">Punya bahan</span>
+          <span class="rounded-full border hairline bg-black/40 px-3.5 py-1.5 text-zinc-300">Bahan Matang</span>
           <span class="flow-arrow">→</span>
-          <span class="rounded-full border hairline bg-black/40 px-3.5 py-1.5 text-zinc-300">Punya sudut</span>
+          <span class="rounded-full border hairline bg-black/40 px-3.5 py-1.5 text-zinc-300">Master Prompt Ready</span>
           <span class="flow-arrow">→</span>
           <span
-            class="rounded-full border orange-line bg-sunset-500/15 px-3.5 py-1.5 text-sunset-300 font-extrabold">Baru
-            produksi</span>
+            class="rounded-full border orange-line bg-sunset-500/15 px-3.5 py-1.5 text-sunset-300 font-extrabold">Siap Eksekusi</span>
         </div>
       </div>
     </section>
@@ -646,10 +547,10 @@
     <!-- 9 OUTPUTS / DELIVERABLES SECTION -->
     <section class="mt-20 fade-up">
       <div class="text-center">
-        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Apa yang Anda Bawa Pulang</p>
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Apa yang Anda Dapatkan</p>
         <h2 class="mt-3 text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white">
-          9 Output yang Membuat Promosi Tidak Lagi <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Mulai dari Tebak-tebakan.</span>
+          9 Output yang Membuat Konten <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Tidak Mulai dari Tebak-tebakan Lagi!</span>
         </h2>
         <p class="mt-4 text-xs sm:text-sm leading-relaxed text-zinc-400 max-w-xl mx-auto">
           Satu kali bedah, lalu gunakan hasilnya sebagai bahan untuk banyak eksekusi konten berikutnya.
@@ -718,10 +619,10 @@
     <!-- QUALIFY SECTION -->
     <section class="mt-20 fade-up">
       <div class="text-center">
-        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Cocok Kalau Anda Punya Ini</p>
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Siapa yang Paling Cocok?</p>
         <h2 class="mt-3 text-2xl sm:text-3xl font-black tracking-tight text-white">
-          Bukan Harus Jago Marketing. Yang Penting <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Anda Punya Produk yang Ingin Dipromosikan.</span>
+          Bukan Harus Jago Marketing. <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Yang Penting Anda Punya Produk yang Ingin Dijual.</span>
         </h2>
       </div>
 
@@ -733,15 +634,15 @@
         </div>
 
         <div class="soft-card rounded-2xl p-5 text-left">
-          <p class="font-bold text-white text-base">🧭 Pernah mencoba promosi.</p>
-          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Anda sudah merasakan bagaimana rasanya
-            rutin posting tapi tetap sering kehabisan arah.</p>
+          <p class="font-bold text-white text-base">🧭 Pernah mencoba ngonten.</p>
+          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Anda sudah merasakan rasanya rutin
+            posting tapi tetap sering kehabisan arah.</p>
         </div>
 
         <div class="soft-card rounded-2xl p-5 text-left">
-          <p class="font-bold text-white text-base">📝 Mau mengisi konteks produk dengan serius.</p>
-          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Semakin jelas input produk Anda, semakin
-            berguna hasil yang bisa disusun.</p>
+          <p class="font-bold text-white text-base">📝 Siap meluangkan 3–5 menit.</p>
+          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Bukan sekadar asal klik tanpa mikir, tapi
+            siap memasukkan fakta dasar produk Anda.</p>
         </div>
       </div>
 
@@ -750,13 +651,199 @@
       </p>
     </section>
 
+    <!-- SOCIAL PROOF / MARQUEE TESTIMONIALS SECTION -->
+    <section class="mt-20 fade-up">
+      <div class="text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bukti Nyata Pengguna</p>
+        <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
+          Kini Mereka Tidak Lagi Promosi <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Tanpa Arah Konten yang Jelas.</span>
+        </h2>
+        <p class="mt-3 text-xs sm:text-sm text-zinc-400 max-w-md mx-auto">
+          Tanggapan riil dari pebisnis &amp; content creator setelah membedah produk mereka lewat Content Strategy Pro.
+        </p>
+      </div>
+
+      <!-- Infinite Moving Marquee Wrapper -->
+      <div class="mt-8 overflow-hidden marquee-fade py-2">
+        <div class="marquee-track gap-4">
+          <!-- Card 1 -->
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-400 to-amber-500 flex items-center justify-center font-bold text-space-950 text-xs">RD</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Rian D.</h4>
+                  <span class="text-[11px] text-zinc-400">Pebisnis Brand Lokal</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              "Dulu udah rutin ngonten tiap hari tapi rasanya gak ada hasil. Pas coba bedah pake CSP, baru sadar ternyata pesan promosi gue selama ini gak nyambung ke alasan beli. Langsung dapet arah!"
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-400 to-sunset-500 flex items-center justify-center font-bold text-space-950 text-xs">NA</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Nadia A.</h4>
+                  <span class="text-[11px] text-sunset-300">Fashion &amp; Apparel Seller</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
+              "Beda banget sama prompt generator murah yang cuma kasih ide klise kayak '5 tips pilih baju'. CSP ini beneran ngebongkar alasan kenapa orang harus checkout sekarang."
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-white text-xs">BW</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Bagas W.</h4>
+                  <span class="text-[11px] text-zinc-400">Social Media Specialist</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              "Dulu tiap mau bikin kalender konten bisa melamun berjam-jam di depan ChatGPT &amp; Canva. Sekarang pas udah dapet peta strateginya, eksekusi konten jadi jauh lebih cepat!"
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center font-bold text-space-950 text-xs">FK</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Fikri K.</h4>
+                  <span class="text-[11px] text-zinc-400">Creator &amp; Affiliate Marketer</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              "Satu kali bedah fakta produk 5 menit, dapet amunisi konten yang bisa dipakai berbulan-bulan. Gak perlu bingung lagi mau posting apa besok."
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-500 to-amber-300 flex items-center justify-center font-bold text-space-950 text-xs">SL</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Siti L.</h4>
+                  <span class="text-[11px] text-sunset-300">Owner F&amp;B / Kuliner</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
+              "Dulu jualan cuma bisa ngandelin diskon potongan harga. Pas pesannya dibedah pake CSP, kontennya jadi lebih menggugah dan bikin orang kepingin order harga normal!"
+            </p>
+          </div>
+
+          <!-- Duplicate Set for Seamless Loop -->
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card" aria-hidden="true">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-400 to-amber-500 flex items-center justify-center font-bold text-space-950 text-xs">RD</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Rian D.</h4>
+                  <span class="text-[11px] text-zinc-400">Pebisnis Brand Lokal</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              "Dulu udah rutin ngonten tiap hari tapi rasanya gak ada hasil. Pas coba bedah pake CSP, baru sadar ternyata pesan promosi gue selama ini gak nyambung ke alasan beli. Langsung dapet arah!"
+            </p>
+          </div>
+
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow" aria-hidden="true">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-400 to-sunset-500 flex items-center justify-center font-bold text-space-950 text-xs">NA</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Nadia A.</h4>
+                  <span class="text-[11px] text-sunset-300">Fashion &amp; Apparel Seller</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
+              "Beda banget sama prompt generator murah yang cuma kasih ide klise kayak '5 tips pilih baju'. CSP ini beneran ngebongkar alasan kenapa orang harus checkout sekarang."
+            </p>
+          </div>
+
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card" aria-hidden="true">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-white text-xs">BW</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Bagas W.</h4>
+                  <span class="text-[11px] text-zinc-400">Social Media Specialist</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              "Dulu tiap mau bikin kalender konten bisa melamun berjam-jam di depan ChatGPT &amp; Canva. Sekarang pas udah dapet peta strateginya, eksekusi konten jadi jauh lebih cepat!"
+            </p>
+          </div>
+
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card" aria-hidden="true">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center font-bold text-space-950 text-xs">FK</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Fikri K.</h4>
+                  <span class="text-[11px] text-zinc-400">Creator &amp; Affiliate Marketer</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              "Satu kali bedah fakta produk 5 menit, dapet amunisi konten yang bisa dipakai berbulan-bulan. Gak perlu bingung lagi mau posting apa besok."
+            </p>
+          </div>
+
+          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow" aria-hidden="true">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-500 to-amber-300 flex items-center justify-center font-bold text-space-950 text-xs">SL</div>
+                <div>
+                  <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Siti L.</h4>
+                  <span class="text-[11px] text-sunset-300">Owner F&amp;B / Kuliner</span>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
+              "Dulu jualan cuma bisa ngandelin diskon potongan harga. Pas pesannya dibedah pake CSP, kontennya jadi lebih menggugah dan bikin orang kepingin order harga normal!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONSISTENCY SECTION -->
     <section class="mt-20 fade-up">
       <div class="orange-card rounded-3xl p-6 sm:p-8">
         <div class="text-center">
           <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-300">Bukan Sekali Pakai Lalu Lupa</p>
           <h2 class="mt-2.5 text-2xl sm:text-3xl font-black text-white">
-            Setelah Tahu Arah Promosinya, Anda Juga Dibantu Menjaganya Tetap Konsisten.
+            Setelah Tahu Arah Kontennya, <br class="hidden sm:inline" />
+            <span class="text-sunset-300">Anda Dibantu Menjaganya Tetap Konsisten.</span>
           </h2>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-300 max-w-lg mx-auto">
             Gunakan hasil bedah sebagai pegangan saat membuat banyak konten berikutnya.
@@ -794,7 +881,7 @@
           <span class="text-sunset-400">Ratusan Konten Berikutnya.</span>
         </h2>
         <p class="mt-3 text-xs sm:text-sm text-zinc-400 max-w-sm mx-auto">
-          Daripada tiap minggu pusing mikir "mau posting apa?", kunci arah promosi produk Anda dari sekarang.
+          Daripada tiap minggu pusing mikir "mau posting apa?", kunci arah konten produk Anda dari sekarang.
         </p>
       </div>
 
@@ -858,7 +945,7 @@
           <div class="rounded-xl border hairline bg-black/30 p-3 flex items-start gap-2.5">
             <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
-              <p class="text-xs sm:text-sm font-bold text-white">9 Output Arah Promosi Lengkap</p>
+              <p class="text-xs sm:text-sm font-bold text-white">9 Output Arah Konten Lengkap</p>
               <p class="text-[11px] text-zinc-400 mt-0.5 leading-relaxed">Audience snapshot, problem-desire map, buying situations, core message, angle, hook, hingga format konten.</p>
             </div>
           </div>
