@@ -292,12 +292,43 @@
     .marquee-track:hover {
       animation-play-state: paused;
     }
-    .marquee-fade {
-      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    /* High-Converting CTA Button "Minta Diklik" Pulse & Glow Animation */
+    @keyframes btnPulseHighlight {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.4), 0 0 10px rgba(251, 191, 36, 0.3);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 42px rgba(255, 107, 53, 0.8), 0 0 22px rgba(251, 191, 36, 0.6);
+        transform: scale(1.025);
+      }
+    }
+
+    @keyframes ctaShimmer {
+      0% { transform: translateX(-120%) skewX(-20deg); }
+      30%, 100% { transform: translateX(250%) skewX(-20deg); }
+    }
+
+    .cta-shine {
+      position: relative;
+      overflow: hidden;
+      animation: btnPulseHighlight 2.2s ease-in-out infinite;
+    }
+
+    .cta-shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+      animation: ctaShimmer 3.2s infinite ease-in-out;
+      pointer-events: none;
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .cta-shine,
       .cta-shine::after {
         animation: none;
       }
@@ -881,7 +912,7 @@
           <span class="text-sunset-400">Ratusan Konten Berikutnya.</span>
         </h2>
         <p class="mt-3 text-xs sm:text-sm text-zinc-400 max-w-sm mx-auto">
-          Daripada tiap minggu pusing mikir "mau posting apa?", kunci arah konten produk Anda dari sekarang.
+          Daripada tiap minggu pusing mikir "mau posting apa?", kunci peta strategi produk Anda dari sekarang.
         </p>
       </div>
 
@@ -890,107 +921,170 @@
         <!-- Floating Highlight Badge -->
         <div class="flex justify-center -mt-8 mb-5">
           <span class="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-sunset-500 via-amber-400 to-sunset-500 px-4 py-1.5 text-[10.5px] font-black uppercase tracking-wider text-space-950 shadow-lg shadow-sunset-500/30">
-            🔥 PENAWARAN SPESIAL · DISKON 50%
+            🔥 PENAWARAN SPESIAL · DISKON 51%
           </span>
         </div>
 
-        <!-- Product Title Header -->
-        <div class="flex items-center justify-between border-b hairline pb-4 gap-3">
-          <div class="flex items-center gap-2.5">
-            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sunset-400 to-sunset-600 text-space-950 font-black shadow-glow flex-shrink-0">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M13 2.5L3.5 13.5H11.5L10 21.5L20.5 10.5H12.5L13 2.5Z"/>
-              </svg>
-            </div>
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-sunset-400 block">Full Lifetime Access</span>
-              <h3 class="text-base sm:text-lg font-black text-white leading-tight">Content Strategy Pro v.4</h3>
-            </div>
-          </div>
-          <span class="rounded-full bg-sunset-500/15 border orange-line px-2.5 py-1 text-[9.5px] font-mono font-black uppercase text-sunset-300 flex-shrink-0">
-            Sekali Bayar
-          </span>
+        <!-- Product Title Header (Centered & Enlarged, No Icon) -->
+        <div class="border-b hairline pb-3 text-center">
+          <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">Content Strategy Pro v.4</h3>
         </div>
 
-        <!-- Price Anchor Box -->
-        <div class="mt-4 rounded-2xl bg-black/50 border hairline p-4 text-center">
-          <div class="flex items-center justify-center gap-2 text-xs font-semibold text-zinc-400">
-            <span>Harga Normal:</span>
-            <span class="line-through text-zinc-500 text-sm">Rp299.000</span>
-            <span class="rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 px-2 py-0.5 text-[10px] font-black uppercase">Hemat Rp152.000</span>
+        <!-- Price Display (Dominant Visual Focus & Exact Requested Sequence) -->
+        <div class="mt-4 text-center">
+          <!-- 1. Harga Normal -->
+          <div class="inline-flex items-baseline justify-center gap-2 px-3.5 py-1 rounded-full bg-black/40 border hairline mb-1">
+            <span class="text-[10.5px] font-semibold text-zinc-400">Harga Normal:</span>
+            <span class="line-through text-zinc-500 text-xs font-bold">Rp299.000</span>
           </div>
-          <div class="mt-2 text-4xl font-black tracking-tight text-white flex items-center justify-center gap-1">
-            <span class="text-2xl text-sunset-400 font-extrabold">Rp</span>147<span class="text-xl text-zinc-400 font-bold">.000</span>
+
+          <!-- 2. Khusus 50 pembeli tercepat hari ini -->
+          <p class="mt-1 text-center text-xs font-semibold text-amber-300">
+            Khusus 50 pembeli tercepat hari ini.
+          </p>
+
+          <!-- 3. Nominal Rp 147.000* -->
+          <div class="mt-1 text-4xl sm:text-5xl font-black tracking-tight text-white flex items-center justify-center gap-1 drop-shadow-[0_0_25px_rgba(255,107,53,0.35)]">
+            <span class="text-sunset-400 font-extrabold">Rp</span>147.000<span class="text-sunset-400 font-bold">*</span>
           </div>
+
+          <!-- 4. *Otomatis tidak berlaku jika kuota promo habis. -->
+          <p class="mt-1 text-center text-[10.5px] text-zinc-400 font-medium">
+            *Otomatis tidak berlaku jika kuota promo habis.
+          </p>
+
+          <!-- 5. Sekali bayar untuk semua produk Anda -->
           <p class="mt-1.5 text-[11px] font-medium text-sunset-300">
-            ⚡ Sekali bayar untuk semua produk Anda. Tanpa langganan bulanan.
+            ⚡ Sekali bayar untuk semua produk Anda.
           </p>
         </div>
 
-        <!-- Ticket-Style Voucher Box -->
-        <div class="mt-3.5 rounded-2xl border-2 border-dashed border-sunset-500/40 bg-sunset-500/10 p-3.5 flex items-center justify-between gap-2 shadow-inner">
-          <div>
-            <span class="text-[9px] font-mono font-bold uppercase tracking-wider text-zinc-400 block">Gunakan Kode Voucher:</span>
-            <span class="font-mono text-sm sm:text-base font-black text-white tracking-widest text-sunset-200">MARKETFIRST</span>
+        <!-- Ticket-Style Voucher Box (Centered & Perfectly Balanced) -->
+        <div class="mt-4 rounded-2xl border border-dashed border-sunset-500/40 bg-sunset-500/10 p-3 flex items-center justify-center gap-2.5 shadow-inner">
+          <span class="text-xs font-semibold text-zinc-300">Kode Promo:</span>
+          <div class="inline-flex items-center gap-2 rounded-xl bg-black/60 border hairline px-3 py-1.5">
+            <span class="font-mono text-xs sm:text-sm font-black text-amber-300 tracking-wider">MARKETFIRST</span>
+            <button type="button" id="copyVoucherBtn" title="Salin Kode Promo" aria-label="Salin Kode Promo" class="copy-btn text-sunset-300 hover:text-sunset-200 active:scale-90 transition pl-1.5 border-l hairline">
+              <span class="text-xs sm:text-sm">📋</span>
+            </button>
           </div>
-          <button type="button" id="copyVoucherBtn" class="copy-btn flex-shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-sunset-500 px-3.5 py-2 text-xs font-black text-space-950 shadow-md hover:bg-sunset-400 active:scale-95 transition">
-            <span>📋 Salin Kode</span>
-          </button>
         </div>
 
-        <!-- Deliverables Stack -->
-        <div class="my-5 space-y-2.5">
+        <!-- Clean Deliverables List (No Box Clutter) -->
+        <div class="my-6 space-y-3.5 text-left">
           <p class="text-[11px] font-mono font-bold uppercase tracking-wider text-sunset-400">Semua yang Anda Dapatkan Hari Ini:</p>
 
-          <div class="rounded-xl border hairline bg-black/30 p-3 flex items-start gap-2.5">
+          <div class="flex items-start gap-3">
             <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
               <p class="text-xs sm:text-sm font-bold text-white">9 Output Arah Konten Lengkap</p>
-              <p class="text-[11px] text-zinc-400 mt-0.5 leading-relaxed">Audience snapshot, problem-desire map, buying situations, core message, angle, hook, hingga format konten.</p>
+              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Audience snapshot, problem-desire map, buying situations, core message, angle, hook, hingga format konten.</p>
             </div>
           </div>
 
-          <div class="rounded-xl border hairline bg-black/30 p-3 flex items-start gap-2.5">
+          <div class="flex items-start gap-3">
             <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
               <p class="text-xs sm:text-sm font-bold text-white">Framework Input Konteks ke AI</p>
-              <p class="text-[11px] text-zinc-400 mt-0.5 leading-relaxed">Tinggal masukkan brief ke ChatGPT, Claude, atau tim agar eksekusi konten langsung tajam & menjual.</p>
+              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Tinggal masukkan brief ke ChatGPT, Claude, atau tim agar eksekusi konten langsung tajam &amp; menjual.</p>
             </div>
           </div>
 
-          <div class="rounded-xl border hairline bg-black/30 p-3 flex items-start gap-2.5">
+          <div class="flex items-start gap-3">
             <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
-              <p class="text-xs sm:text-sm font-bold text-white">Akses Penuh Selamanya (Lifetime)</p>
-              <p class="text-[11px] text-zinc-400 mt-0.5 leading-relaxed">Pakai kapan saja untuk produk lama, varian baru, atau bisnis berikutnya tanpa batas.</p>
+              <p class="text-xs sm:text-sm font-bold text-white">Akses Penuh &amp; Gratis Update</p>
+              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Pakai kapan saja untuk produk lama, varian baru, atau bisnis berikutnya tanpa batas.</p>
             </div>
           </div>
         </div>
 
         <!-- High-Impact Primary CTA Button -->
         <a href="#final-cta"
-          class="cta-shine mt-2 flex flex-col items-center justify-center gap-0.5 w-full rounded-2xl bg-gradient-to-r from-sunset-500 via-sunset-400 to-amber-400 px-6 py-4 text-center shadow-[0_0_30px_rgba(255,107,53,0.4)] hover:brightness-110 active:scale-[0.98] transition">
-          <span class="text-base font-black text-space-950 flex items-center justify-center gap-1.5">
-            Amankan Akses Promo Sekarang →
-          </span>
-          <span class="text-[10px] font-extrabold text-space-950/75 tracking-wider uppercase">
-            ⚡ Sekali Bayar · Akses Langsung Dikirim
+          class="cta-shine mt-2 flex items-center justify-center gap-1.5 w-full rounded-2xl bg-gradient-to-r from-sunset-500 via-sunset-400 to-amber-400 px-6 py-4 text-center shadow-[0_0_30px_rgba(255,107,53,0.4)] hover:brightness-110 active:scale-[0.98] transition">
+          <span class="text-base sm:text-lg font-black text-white drop-shadow-sm">
+            Dapatkan Promo Sekarang
           </span>
         </a>
 
-        <!-- Trust Signals Bar -->
-        <div class="mt-4 pt-3 border-t hairline flex items-center justify-center gap-3 text-[10px] sm:text-[11px] font-semibold text-zinc-400">
-          <span class="flex items-center gap-1">🔒 Checkout Aman</span>
-          <span>•</span>
-          <span class="flex items-center gap-1">⚡ Akses Instan</span>
-          <span>•</span>
-          <span class="flex items-center gap-1">♾️ Bebas Langganan</span>
+        <!-- Trust Signals Bar (Strict Single Line) -->
+        <div class="mt-4 pt-3 border-t hairline flex items-center justify-center gap-1.5 sm:gap-3 text-[9px] sm:text-[11px] font-semibold text-zinc-400 whitespace-nowrap">
+          <span class="inline-flex items-center gap-0.5">🔒 Checkout Aman</span>
+          <span class="text-zinc-600">•</span>
+          <span class="inline-flex items-center gap-0.5">⚡ Akses Instan</span>
+          <span class="text-zinc-600">•</span>
+          <span class="inline-flex items-center gap-0.5">♾️ Bebas Langganan</span>
         </div>
 
-        <!-- Fineprint -->
-        <p class="mt-3 text-center text-[10px] leading-relaxed text-zinc-500">
-          Masukkan kode <strong class="text-zinc-300">MARKETFIRST</strong> saat checkout untuk menikmati potongan 50%.
+        <!-- Fineprint (Strict Single Line) -->
+        <p class="mt-2.5 text-center text-[9.5px] sm:text-[10.5px] text-zinc-500 whitespace-nowrap">
+          Masukkan kode promo saat checkout untuk menikmati potongan 51%.
         </p>
+      </div>
+
+      <!-- EXCLUSIVE BONUS SECTION -->
+      <div class="mt-6 rounded-3xl border hairline bg-space-950/90 p-5 sm:p-7 text-left soft-card">
+        <div class="text-center border-b hairline pb-4">
+          <span class="inline-block rounded-full bg-sunset-500/15 border orange-line px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-sunset-300 mb-2">
+            🎁 BONUS EKSKLUSIF
+          </span>
+          <h3 class="text-lg sm:text-xl font-black text-white">3 Bonus Tambahan Gratis untuk Anda</h3>
+          <p class="mt-1 text-xs text-zinc-400">
+            Otomatis didapatkan tanpa biaya tambahan saat menggunakan kode promo <strong class="text-sunset-300">MARKETFIRST</strong>.
+          </p>
+        </div>
+
+        <div class="mt-5 space-y-3.5">
+          <!-- Bonus 1 -->
+          <div class="rounded-2xl border hairline bg-black/40 p-4 flex items-start gap-3">
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <h4 class="text-xs sm:text-sm font-bold text-white">Bonus 30 Days Content Fit</h4>
+                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp199.000</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 mt-1 leading-relaxed">
+                Panduan &amp; kalender eksekusi konten terarah selama 30 hari penuh tanpa takut kehabisan ide.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bonus 2 -->
+          <div class="rounded-2xl border hairline bg-black/40 p-4 flex items-start gap-3">
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <h4 class="text-xs sm:text-sm font-bold text-white">Bonus Message, Angle &amp; Flow Framework</h4>
+                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp149.000</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 mt-1 leading-relaxed">
+                Framework menyusun alur pesan promosi dari pembuka (hook) hingga kalimat ajakan beli (CTA).
+              </p>
+            </div>
+          </div>
+
+          <!-- Bonus 3 -->
+          <div class="rounded-2xl border hairline bg-black/40 p-4 flex items-start gap-3">
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <div class="flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <h4 class="text-xs sm:text-sm font-bold text-white">Bonus Viral &amp; Targeted Promotion Guide</h4>
+                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp149.000</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 mt-1 leading-relaxed">
+                Panduan praktis membidik target audience yang tepat agar pesan promosi menjangkau calon pembeli potensial.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bonus Total Summary Box -->
+        <div class="mt-5 rounded-2xl border orange-line bg-sunset-500/10 p-4 text-center">
+          <p class="text-xs sm:text-sm font-bold text-zinc-200">
+            Total Nilai Bonus: <span class="line-through text-zinc-400 font-mono">Rp497.000</span> → <span class="text-sunset-300 font-black text-sm sm:text-base">GRATIS 100%</span>
+          </p>
+          <p class="text-[10.5px] text-zinc-400 mt-0.5">Khusus pengguna kode promo MARKETFIRST hari ini.</p>
+        </div>
       </div>
     </section>
 
@@ -1120,9 +1214,9 @@
           const original = copyBtn.innerHTML;
           try {
             await navigator.clipboard.writeText('MARKETFIRST');
-            copyBtn.innerHTML = '<span>✓ Kode Tersalin</span>';
+            copyBtn.innerHTML = '<span class="text-xs text-emerald-300 font-bold whitespace-nowrap">✓ Tersalin</span>';
           } catch (e) {
-            window.prompt('Salin kode voucher:', 'MARKETFIRST');
+            window.prompt('Salin kode promo:', 'MARKETFIRST');
           }
           window.setTimeout(() => copyBtn.innerHTML = original, 2200);
         });
