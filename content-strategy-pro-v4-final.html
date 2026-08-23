@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b12" />
+  <meta name="description" content="Content Strategy Pro membantu membedah produk menjadi arah promosi, pesan, angle, dan bahan konten sebelum mulai posting." />
+  <title>Content Strategy Pro v4 — Arah Promosi Sebelum Ngonten</title>
+
+  <style>
+    :root{
+      --bg:#080b12;
+      --bg-soft:#0d111b;
+      --panel:#111722;
+      --panel-2:#161018;
+      --panel-warm:#22140f;
+      --line:#232c3b;
+      --line-warm:#5d2c18;
+      --text:#f7f7f5;
+      --muted:#aeb6c6;
+      --muted-2:#7f899b;
+      --orange:#ff6b2c;
+      --orange-2:#ff8a2a;
+      --yellow:#ffc83d;
+      --green:#6ee7a8;
+      --danger:#ff6577;
+      --shadow:0 24px 80px rgba(0,0,0,.34);
+      --glow:0 0 0 1px rgba(255,107,44,.18), 0 18px 60px rgba(255,107,44,.09);
+      --radius:22px;
+      --radius-sm:14px;
+      --max:780px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255,107,44,.09), transparent 27rem),
+        radial-gradient(circle at 90% 20%, rgba(67,80,255,.08), transparent 30rem),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit}
+    button, a{font:inherit}
+
+    .wrap{
+      width:min(calc(100% - 36px), var(--max));
+      margin-inline:auto;
+    }
+
+    .section{
+      padding:88px 0;
+      position:relative;
+    }
+
+    .section.tight{padding:58px 0}
+    .section + .section{border-top:1px solid rgba(255,255,255,.035)}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin:0 auto 16px;
+      color:var(--orange-2);
+      font-size:12px;
+      line-height:1.2;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:99px;
+      background:linear-gradient(135deg,var(--orange),var(--yellow));
+      box-shadow:0 0 18px rgba(255,138,42,.45);
+    }
+
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{letter-spacing:-.035em}
+
+    h1{
+      max-width:760px;
+      margin:0 auto 20px;
+      font-size:clamp(42px,8vw,72px);
+      line-height:.98;
+      font-weight:900;
+      text-align:center;
+    }
+
+    h2{
+      max-width:700px;
+      margin:0 auto 14px;
+      font-size:clamp(30px,5vw,46px);
+      line-height:1.05;
+      font-weight:850;
+      text-align:center;
+    }
+
+    h3{
+      font-size:20px;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+
+    .accent{
+      background:linear-gradient(90deg,var(--orange),var(--yellow));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .lead{
+      max-width:700px;
+      margin:0 auto;
+      text-align:center;
+      font-size:clamp(18px,2.5vw,22px);
+      line-height:1.55;
+      color:#e5e7ec;
+    }
+
+    .sublead{
+      max-width:650px;
+      margin:16px auto 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .topbar{
+      padding:22px 0 4px;
+    }
+
+    .brand{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      font-weight:850;
+      font-size:14px;
+      letter-spacing:-.02em;
+    }
+
+    .brand-mark{
+      width:30px;
+      height:30px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      color:#15100b;
+      font-weight:1000;
+      background:linear-gradient(135deg,var(--orange),var(--yellow));
+      box-shadow:0 10px 30px rgba(255,107,44,.22);
+    }
+
+    .micro-badge{
+      width:max-content;
+      max-width:100%;
+      margin:14px auto 0;
+      padding:7px 11px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(14,18,28,.8);
+      color:#d8dde7;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .hero{
+      padding:48px 0 88px;
+      min-height:680px;
+      display:flex;
+      align-items:center;
+    }
+
+    .hero .wrap{text-align:center}
+
+    .hero-copy{
+      margin-top:22px;
+      padding:22px;
+      background:linear-gradient(180deg,rgba(17,23,34,.96),rgba(13,17,27,.96));
+      border:1px solid var(--line);
+      border-radius:var(--radius-sm);
+      text-align:left;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-copy p{
+      margin:0;
+      color:#d8dce4;
+      font-size:16px;
+    }
+
+    .hero-copy strong{color:#fff}
+
+    .mini-list{
+      display:grid;
+      gap:10px;
+      margin-top:15px;
+    }
+
+    .mini-item{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#cfd5df;
+      font-size:14px;
+    }
+
+    .mini-icon{
+      flex:0 0 20px;
+      width:20px;
+      height:20px;
+      display:grid;
+      place-items:center;
+      margin-top:2px;
+      border-radius:6px;
+      color:var(--orange);
+      background:rgba(255,107,44,.09);
+      border:1px solid rgba(255,107,44,.15);
+      font-size:11px;
+      font-weight:900;
+    }
+
+    .cta-row{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .btn{
+      border:0;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:12px;
+      font-weight:850;
+      font-size:15px;
+      transition:.2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn-primary{
+      color:#1d1208;
+      background:linear-gradient(90deg,var(--orange),var(--yellow));
+      box-shadow:0 14px 35px rgba(255,107,44,.22);
+    }
+
+    .btn-secondary{
+      color:#e6e9ef;
+      background:#121824;
+      border:1px solid var(--line);
+    }
+
+    .fineprint{
+      margin:10px auto 0;
+      color:var(--muted-2);
+      font-size:11px;
+      text-align:center;
+    }
+
+    .cards{
+      display:grid;
+      gap:12px;
+      margin-top:30px;
+    }
+
+    .card{
+      position:relative;
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:var(--radius-sm);
+      background:linear-gradient(180deg,#121824,#0e141e);
+      box-shadow:0 12px 34px rgba(0,0,0,.16);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:3px;
+      border-radius:var(--radius-sm) 0 0 var(--radius-sm);
+      background:var(--orange);
+      opacity:.75;
+    }
+
+    .card:nth-child(2)::before{background:var(--yellow)}
+    .card:nth-child(3)::before{background:#ff7f50}
+    .card:nth-child(4)::before{background:#a56dff}
+
+    .card-kicker{
+      margin:0 0 5px;
+      color:var(--muted-2);
+      font-size:11px;
+      letter-spacing:.08em;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .warm-box{
+      margin-top:34px;
+      padding:30px;
+      border:1px solid rgba(255,107,44,.2);
+      border-radius:var(--radius);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,126,42,.12), transparent 52%),
+        linear-gradient(180deg,#241711,#171012);
+      box-shadow:var(--glow);
+    }
+
+    .warm-box h2{font-size:clamp(27px,4.2vw,38px)}
+    .warm-box p{color:#c9bec0;text-align:center}
+
+    .shift{
+      margin-top:22px;
+      display:grid;
+      gap:10px;
+    }
+
+    .shift-row{
+      padding:18px;
+      border-radius:13px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(4,6,10,.35);
+    }
+
+    .shift-row small{
+      display:block;
+      color:#858c9a;
+      margin-bottom:5px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:10px;
+      font-weight:800;
+    }
+
+    .shift-row strong{
+      display:block;
+      font-size:17px;
+      line-height:1.35;
+    }
+
+    .shift-row.active{
+      border-color:rgba(255,107,44,.34);
+      background:rgba(255,107,44,.07);
+    }
+
+    .shift-row.active strong{color:#fff2e8}
+
+    .steps{
+      display:grid;
+      gap:12px;
+      margin-top:30px;
+      counter-reset:step;
+    }
+
+    .step{
+      counter-increment:step;
+      position:relative;
+      padding:22px 22px 22px 70px;
+      border:1px solid var(--line);
+      border-radius:var(--radius-sm);
+      background:#101620;
+    }
+
+    .step::before{
+      content:counter(step);
+      position:absolute;
+      left:20px;
+      top:20px;
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--orange),var(--yellow));
+      color:#1a100a;
+      font-weight:950;
+    }
+
+    .step p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .proof-wrap{
+      margin-top:34px;
+      padding:18px;
+      border:1px solid rgba(255,107,44,.22);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,#0f1520,#0a0f17);
+      box-shadow:var(--glow);
+    }
+
+    .proof-context{
+      padding:18px;
+      margin-bottom:12px;
+      border-radius:13px;
+      background:#0a0f16;
+      border:1px dashed #2d384a;
+    }
+
+    .proof-context b{color:#fff}
+    .proof-context p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .person{
+      padding:22px;
+      border-radius:15px;
+      border:1px solid var(--line);
+      background:#121824;
+    }
+
+    .person + .vs{
+      padding:10px 0;
+      text-align:center;
+      color:#6f7888;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.18em;
+    }
+
+    .person-b{
+      border-color:rgba(255,107,44,.34);
+      background:
+        radial-gradient(circle at 100% 0%,rgba(255,107,44,.09),transparent 38%),
+        #15151b;
+    }
+
+    .person-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+      margin-bottom:16px;
+    }
+
+    .person-label{
+      display:inline-block;
+      padding:5px 9px;
+      margin-bottom:8px;
+      border-radius:999px;
+      font-size:10px;
+      letter-spacing:.08em;
+      font-weight:900;
+      text-transform:uppercase;
+      color:#d9dee8;
+      background:#1b2330;
+      border:1px solid #2a3445;
+    }
+
+    .person-b .person-label{
+      color:#ffe8d6;
+      background:rgba(255,107,44,.11);
+      border-color:rgba(255,107,44,.25);
+    }
+
+    .prompt{
+      padding:15px;
+      margin:0 0 14px;
+      border-radius:12px;
+      color:#e9ecf2;
+      background:#090d13;
+      border:1px solid #202a38;
+      font-size:13px;
+      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      line-height:1.55;
+    }
+
+    .result-list{
+      display:grid;
+      gap:8px;
+      padding:0;
+      margin:0;
+      list-style:none;
+    }
+
+    .result-list li{
+      padding:10px 12px;
+      border-radius:10px;
+      color:#b9c0cc;
+      background:#0d131c;
+      border:1px solid #1e2734;
+      font-size:13px;
+    }
+
+    .person-b .result-list li{
+      color:#eee6e0;
+      border-color:rgba(255,107,44,.13);
+      background:rgba(255,107,44,.045);
+    }
+
+    .proof-takeaway{
+      margin-top:16px;
+      padding:18px;
+      text-align:center;
+      border-radius:13px;
+      color:#efe9e3;
+      background:linear-gradient(90deg,rgba(255,107,44,.08),rgba(255,200,61,.06));
+      border:1px solid rgba(255,138,42,.18);
+      font-weight:700;
+    }
+
+    .proof-note{
+      margin:12px 4px 0;
+      color:#6f7888;
+      font-size:10px;
+      text-align:center;
+    }
+
+    .output-list{
+      display:grid;
+      gap:10px;
+      margin-top:28px;
+    }
+
+    .output{
+      display:flex;
+      gap:14px;
+      padding:17px 18px;
+      background:#111722;
+      border:1px solid var(--line);
+      border-radius:13px;
+    }
+
+    .output-num{
+      flex:0 0 30px;
+      width:30px;
+      height:30px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      color:#1a0e07;
+      background:linear-gradient(135deg,var(--orange),var(--yellow));
+      font-size:12px;
+      font-weight:950;
+    }
+
+    .output b{display:block;margin-bottom:2px;font-size:14px}
+    .output span{display:block;color:var(--muted);font-size:13px}
+
+    .qualify{
+      margin-top:28px;
+      display:grid;
+      gap:12px;
+    }
+
+    .q-card{
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#101620;
+    }
+
+    .q-card strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:15px;
+    }
+
+    .q-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .consistency{
+      display:grid;
+      gap:10px;
+      margin-top:25px;
+    }
+
+    .consistency-item{
+      padding:17px;
+      border:1px solid rgba(255,107,44,.16);
+      border-radius:12px;
+      background:rgba(255,107,44,.045);
+    }
+
+    .consistency-item b{
+      display:block;
+      color:#ffe4d4;
+      margin-bottom:4px;
+    }
+
+    .consistency-item span{
+      display:block;
+      color:#b8adb0;
+      font-size:13px;
+    }
+
+    .price-card{
+      margin-top:30px;
+      padding:30px;
+      border-radius:24px;
+      border:1px solid rgba(255,107,44,.25);
+      background:
+        radial-gradient(circle at 85% 5%,rgba(255,163,46,.12),transparent 35%),
+        linear-gradient(180deg,#281814,#1a1213);
+      box-shadow:var(--glow);
+    }
+
+    .price-top{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:flex-start;
+      margin-bottom:22px;
+    }
+
+    .price-name{
+      font-size:17px;
+      font-weight:850;
+    }
+
+    .pill{
+      padding:6px 9px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--orange),var(--yellow));
+      color:#1d1007;
+      font-size:10px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .price{
+      font-size:clamp(46px,8vw,66px);
+      line-height:1;
+      font-weight:950;
+      letter-spacing:-.055em;
+    }
+
+    .price-caption{
+      margin-top:7px;
+      color:#f3c765;
+      font-size:13px;
+    }
+
+    .included{
+      padding:0;
+      margin:24px 0 0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .included li{
+      position:relative;
+      padding-left:25px;
+      color:#d9d1ce;
+      font-size:14px;
+    }
+
+    .included li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--yellow);
+      font-weight:950;
+    }
+
+    .price-card .btn{
+      width:100%;
+      margin-top:26px;
+    }
+
+    .faq{
+      display:grid;
+      gap:10px;
+      margin-top:28px;
+    }
+
+    details{
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:#101620;
+      overflow:hidden;
+    }
+
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding:17px 48px 17px 18px;
+      position:relative;
+      font-weight:800;
+      font-size:14px;
+    }
+
+    summary::-webkit-details-marker{display:none}
+
+    summary::after{
+      content:"+";
+      position:absolute;
+      right:18px;
+      top:14px;
+      color:var(--orange);
+      font-size:20px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    details[open] summary::after{transform:rotate(45deg)}
+    details p{
+      padding:0 18px 18px;
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .final-cta{
+      padding:34px;
+      border-radius:24px;
+      border:1px solid rgba(255,107,44,.22);
+      background:
+        radial-gradient(circle at 50% 0%,rgba(255,149,48,.14),transparent 44%),
+        linear-gradient(180deg,#241611,#171012);
+      box-shadow:var(--glow);
+      text-align:center;
+    }
+
+    .final-cta h2{font-size:clamp(31px,5vw,44px)}
+
+    footer{
+      padding:10px 0 44px;
+      text-align:center;
+      color:#596273;
+      font-size:11px;
+    }
+
+    @media (max-width:640px){
+      .wrap{width:min(calc(100% - 24px), var(--max))}
+      .section{padding:68px 0}
+      .hero{padding:34px 0 70px;min-height:auto}
+      h1{font-size:42px}
+      .lead{font-size:18px}
+      .hero-copy,.warm-box,.price-card,.final-cta{padding:20px}
+      .step{padding:18px 18px 18px 62px}
+      .step::before{left:16px;top:17px}
+      .price-top{align-items:center}
+      .btn{width:100%}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition:none!important}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-mark">C</span>
+        <span>Content Strategy Pro</span>
+      </div>
+      <div class="micro-badge">v4 · arah promosi sebelum mulai bikin konten</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Bikin konten bukan sekadar rutin posting</div>
+
+        <h1>
+          Ngonten Terus. Promo Terus.
+          <span class="accent">Kok Order Nggak Ikut Masuk?</span>
+        </h1>
+
+        <p class="lead">
+          Kontennya ganti. Desainnya ganti. Caption-nya ganti.
+          <strong>Tapi cara Anda menjual produknya masih itu-itu saja.</strong>
+        </p>
+
+        <div class="hero-copy">
+          <p>
+            Ujung-ujungnya kembali ke <strong>fitur, harga, diskon, promo, lalu “beli sekarang”.</strong>
+            Padahal bisa jadi yang perlu dibenahi bukan seberapa sering Anda posting,
+            tapi <strong>apa yang Anda angkat dan sampaikan dari produk itu.</strong>
+          </p>
+
+          <div class="mini-list">
+            <div class="mini-item"><span class="mini-icon">✓</span><span>Bedah produk sebelum buru-buru bikin konten.</span></div>
+            <div class="mini-item"><span class="mini-icon">✓</span><span>Temukan pesan, angle, dan bahan promosi yang lebih terarah.</span></div>
+            <div class="mini-item"><span class="mini-icon">✓</span><span>Bawa hasilnya ke ChatGPT, Gemini, Claude, Canva, atau workflow konten Anda.</span></div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#offer">Susun Arah Promosi Produk Saya →</a>
+          <a class="btn btn-secondary" href="#proof">Lihat Perbandingan Hasil</a>
+        </div>
+        <p class="fineprint">Bukan janji order otomatis. Ini alat untuk memperbaiki arah sebelum konten dibuat.</p>
+      </div>
+    </section>
+
+    <!-- RECOGNITION -->
+    <section class="section">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">Kejadian yang sering berulang</div>
+        </div>
+        <h2>Bukan Kurang Rajin. Tapi Setiap Mau Ngonten, <span class="accent">Mulainya dari Nol Lagi.</span></h2>
+        <p class="sublead">
+          Masalahnya sering terasa kecil saat satu per satu. Tapi kalau berulang tiap hari,
+          promosi jadi capek dan arahnya gampang berubah-ubah.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-kicker">Buka Canva</div>
+            <h3>Desainnya bisa dibuat. Tapi bingung isi pesannya apa.</h3>
+            <p>Akhirnya kembali ke foto produk, fitur, harga, atau promo yang sedang jalan.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Buka AI</div>
+            <h3>Minta ide konten. Dapat banyak. Tapi terasa generik.</h3>
+            <p>Idenya ada, tetapi belum tentu nyambung dengan alasan orang memilih produk Anda.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Ada Diskon</div>
+            <h3>Baru terasa “punya bahan” untuk promosi.</h3>
+            <p>Begitu promonya habis, kembali bingung mau ngomong apa lagi tentang produk.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Besoknya</div>
+            <h3>Konten baru lagi. Tapi pola jualannya tetap sama.</h3>
+            <p>Yang berubah bentuk postingannya. Bukan arah komunikasinya.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHIFT -->
+    <section class="section tight">
+      <div class="wrap">
+        <div class="warm-box">
+          <div style="text-align:center">
+            <div class="eyebrow">Cara berpikir sebelum posting</div>
+          </div>
+          <h2>Jangan Mulai dari “Hari Ini Mau Posting Apa?”</h2>
+          <p>Mulai dari pertanyaan yang lebih berguna untuk promosi produk Anda.</p>
+
+          <div class="shift">
+            <div class="shift-row">
+              <small>Bukan mulai dari</small>
+              <strong>“Konten apa lagi yang belum saya buat?”</strong>
+            </div>
+            <div class="shift-row active">
+              <small>Mulai dari</small>
+              <strong>“Apa yang perlu orang pahami supaya produk ini terasa layak dibeli?”</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MECHANISM -->
+    <section class="section">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">Cara kerja</div>
+        </div>
+        <h2>Dari “Produk Apa Adanya” Menjadi <span class="accent">Arah Promosi yang Lebih Tajam.</span></h2>
+        <p class="sublead">
+          Anda tidak diminta jadi jago marketing. Sistem membantu mengubah informasi produk
+          menjadi konteks yang lebih siap dipakai untuk membuat promosi.
+        </p>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Masukkan konteks produk</h3>
+            <p>Produk apa, siapa yang biasanya membeli, manfaat, pembeda, harga, situasi penggunaan, dan informasi penting lainnya.</p>
+          </article>
+          <article class="step">
+            <h3>Produk dibedah dari beberapa sudut</h3>
+            <p>Bukan cuma “apa fiturnya”, tapi masalah, situasi, alasan memilih, pesan yang perlu dipahami, dan cara membawanya ke konten.</p>
+          </article>
+          <article class="step">
+            <h3>Dapatkan bahan promosi yang bisa dipakai berulang</h3>
+            <p>Message, angle, hook direction, content type, placement, sampai prompt siap pakai untuk membantu produksi berikutnya.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF / AI COMPARISON -->
+    <section class="section" id="proof">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">Bukti lewat perbandingan</div>
+        </div>
+        <h2>Dua Orang. AI yang Sama. <span class="accent">Hasilnya Bisa Jauh Berbeda.</span></h2>
+        <p class="sublead">
+          Bedanya bukan siapa yang lebih jago bikin prompt. Yang satu langsung minta ide.
+          Yang satu masuk ke AI dengan arah promosi yang sudah dibedah lebih dulu.
+        </p>
+
+        <div class="proof-wrap">
+          <div class="proof-context">
+            <b>Contoh produk yang sama:</b>
+            <p>Sambal bawang rumahan 150 ml · pedas gurih · praktis untuk lauk sehari-hari · Rp28.000.</p>
+          </div>
+
+          <article class="person">
+            <div class="person-head">
+              <div>
+                <span class="person-label">Orang A · langsung tanya AI</span>
+                <h3>“Buatkan ide konten untuk jualan sambal saya.”</h3>
+              </div>
+            </div>
+
+            <div class="prompt">Buatkan 10 ide konten Instagram untuk promosi sambal bawang rumahan saya.</div>
+
+            <ul class="result-list">
+              <li>5 alasan pecinta pedas wajib coba sambal ini.</li>
+              <li>Behind the scenes proses pembuatan sambal.</li>
+              <li>Promo diskon khusus minggu ini.</li>
+              <li>Testimoni pelanggan setelah mencoba.</li>
+              <li>Ide menu yang cocok dimakan dengan sambal.</li>
+            </ul>
+          </article>
+
+          <div class="vs">VS</div>
+
+          <article class="person person-b">
+            <div class="person-head">
+              <div>
+                <span class="person-label">Orang B · pakai arah dari Content Strategy Pro</span>
+                <h3>Bukan cuma minta ide. AI sudah diberi konteks “apa yang mau dijual lewat kontennya”.</h3>
+              </div>
+            </div>
+
+            <div class="prompt">Gunakan brief strategi ini untuk membuat konten: buyer sering punya lauk sederhana tapi makan terasa membosankan; produk diposisikan sebagai pelengkap praktis yang membuat menu rumahan terasa lebih “jadi”; fokus pada situasi telur/nasi hangat, akhir bulan, bekal cepat, dan lauk seadanya; hindari mulai dari diskon.</div>
+
+            <ul class="result-list">
+              <li><strong>Situasi:</strong> “Lauknya cuma telur lagi?” — angkat rasa bosan sebelum menawarkan sambal.</li>
+              <li><strong>Angle:</strong> Menu sederhana tidak harus terasa seadanya.</li>
+              <li><strong>Hook:</strong> “Yang bikin makan telur lagi terasa beda kadang bukan lauk barunya.”</li>
+              <li><strong>Demo content:</strong> nasi hangat + telur → tambah sambal → fokus pada momen makan, bukan daftar fitur.</li>
+              <li><strong>CTA:</strong> ajak cek varian/rasa setelah relevansi produknya sudah terasa.</li>
+            </ul>
+          </article>
+
+          <div class="proof-takeaway">
+            AI-nya bisa sama. Yang membedakan adalah <span class="accent">arah sebelum meminta AI membuat konten.</span>
+          </div>
+
+          <p class="proof-note">Contoh simulasi untuk memperlihatkan perbedaan struktur input. Output AI dapat berbeda tergantung model, konteks, dan informasi produk.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOT IDEA GENERATOR -->
+    <section class="section">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">Bukan generator ide</div>
+        </div>
+        <h2>Bukan Sekadar “Cari Ide Konten yang Banyak”.</h2>
+        <p class="sublead">
+          Karena masalahnya bukan kekurangan ide. Masalahnya: ide itu mau membawa produk Anda ke arah mana?
+        </p>
+
+        <div class="warm-box">
+          <h2>Anda Tidak Lagi Membuka Canva atau ChatGPT dengan Kepala Kosong.</h2>
+          <p>
+            Anda sudah punya pegangan tentang pesan, sudut, dan konteks yang ingin dibawa.
+            Jadi AI dan tools produksi dipakai untuk mengeksekusi arah — bukan menebak arahnya dari nol.
+          </p>
+          <div class="cta-row">
+            <span class="micro-badge">Punya arah</span>
+            <span class="micro-badge">Punya bahan</span>
+            <span class="micro-badge">Punya sudut</span>
+            <span class="micro-badge">Baru produksi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTPUTS -->
+    <section class="section">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">Apa yang Anda bawa pulang</div>
+        </div>
+        <h2>9 Output yang Membuat Promosi Tidak Lagi <span class="accent">Mulai dari Tebak-tebakan.</span></h2>
+        <p class="sublead">Satu kali bedah, lalu gunakan hasilnya sebagai bahan untuk banyak eksekusi konten berikutnya.</p>
+
+        <div class="output-list">
+          <div class="output"><div class="output-num">01</div><div><b>Audience Snapshot</b><span>Siapa yang paling mungkin relevan dan situasi mereka saat bertemu produk Anda.</span></div></div>
+          <div class="output"><div class="output-num">02</div><div><b>Problem & Desire Map</b><span>Masalah, keresahan, dan hasil yang sebenarnya ingin mereka dapatkan.</span></div></div>
+          <div class="output"><div class="output-num">03</div><div><b>Buying Situations</b><span>Momen ketika kebutuhan terhadap produk Anda terasa lebih nyata.</span></div></div>
+          <div class="output"><div class="output-num">04</div><div><b>Content Message</b><span>Pesan besar yang perlu terus diperkuat supaya promosi tidak melebar ke mana-mana.</span></div></div>
+          <div class="output"><div class="output-num">05</div><div><b>Content Angles</b><span>Berbagai sudut untuk mengangkat produk tanpa mengulang cara jual yang sama.</span></div></div>
+          <div class="output"><div class="output-num">06</div><div><b>Hook Directions</b><span>Arah pembuka konten berdasarkan pain, gain, curiosity, atau situasi tertentu.</span></div></div>
+          <div class="output"><div class="output-num">07</div><div><b>Content Type & Form</b><span>Rekomendasi cara membawa pesan ke monolog, demo, carousel, poster, dan format lain.</span></div></div>
+          <div class="output"><div class="output-num">08</div><div><b>Placement & CTA Direction</b><span>Arah distribusi dan ajakan yang lebih selaras dengan tujuan konten.</span></div></div>
+          <div class="output"><div class="output-num">09</div><div><b>Prompt Siap Eksekusi</b><span>Bawa konteks yang sudah disusun ke AI untuk membantu membuat konten lebih konsisten.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALIFY -->
+    <section class="section tight">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">Cocok kalau Anda punya ini</div>
+        </div>
+        <h2>Bukan Harus Jago Marketing. Yang Penting <span class="accent">Anda Punya Produk yang Ingin Dipromosikan.</span></h2>
+
+        <div class="qualify">
+          <div class="q-card">
+            <strong>✓ Produknya sudah ada.</strong>
+            <p>Fisik, digital, atau jasa — selama Anda bisa menjelaskan apa yang dijual.</p>
+          </div>
+          <div class="q-card">
+            <strong>✓ Pernah mencoba promosi.</strong>
+            <p>Anda sudah merasakan bagaimana rasanya rutin posting tapi tetap sering kehabisan arah.</p>
+          </div>
+          <div class="q-card">
+            <strong>✓ Mau mengisi konteks produk dengan serius.</strong>
+            <p>Semakin jelas input produk Anda, semakin berguna hasil yang bisa disusun.</p>
+          </div>
+        </div>
+
+        <p class="fineprint" style="margin-top:18px">Kalau yang Anda cari hanya generator caption sekali klik, produk ini mungkin bukan yang paling cocok.</p>
+      </div>
+    </section>
+
+    <!-- CONSISTENCY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="warm-box">
+          <div style="text-align:center">
+            <div class="eyebrow">Bukan sekali pakai lalu lupa</div>
+          </div>
+          <h2>Setelah Tahu Arah Promosinya, Anda Juga Dibantu Menjaganya Tetap Konsisten.</h2>
+          <p>Gunakan hasil bedah sebagai pegangan saat membuat banyak konten berikutnya.</p>
+
+          <div class="consistency">
+            <div class="consistency-item"><b>Core Message</b><span>Supaya konten berbeda-beda, tapi pesan besarnya tetap nyambung.</span></div>
+            <div class="consistency-item"><b>Angle Library</b><span>Supaya tidak kembali ke fitur, promo, diskon, dan “beli sekarang” terus-menerus.</span></div>
+            <div class="consistency-item"><b>Prompt Execution</b><span>Supaya saat membuka AI, Anda datang membawa konteks — bukan kepala kosong.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section class="section" id="offer">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">Sekali susun arah promosinya</div>
+        </div>
+        <h2>Pakai Sebagai Pegangan untuk <span class="accent">Banyak Konten Berikutnya.</span></h2>
+
+        <div class="price-card">
+          <div class="price-top">
+            <div>
+              <div class="card-kicker" style="color:#f2aa4b">Akses Produk</div>
+              <div class="price-name">Content Strategy Pro v4</div>
+            </div>
+            <div class="pill">SEKALI BAYAR</div>
+          </div>
+
+          <div class="price">Rp147.000</div>
+          <div class="price-caption">Untuk membantu menyusun arah promosi sebelum produksi konten.</div>
+
+          <ul class="included">
+            <li>Bedah konteks produk & audience.</li>
+            <li>Problem, desire, dan buying situations.</li>
+            <li>Content message & angle direction.</li>
+            <li>Hook, type, form, placement, dan CTA direction.</li>
+            <li>Prompt siap dibawa ke AI untuk eksekusi.</li>
+            <li>Output yang bisa dijadikan pegangan konten berikutnya.</li>
+          </ul>
+
+          <!-- Ganti href di bawah dengan URL checkout Anda jika sudah siap -->
+          <a class="btn btn-primary" href="#final-cta">Saya Mau Susun Arah Promosi →</a>
+          <p class="fineprint">Produk membantu memperjelas arah promosi. Hasil penjualan tetap dipengaruhi produk, penawaran, traffic, eksekusi, dan faktor bisnis lainnya.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section tight">
+      <div class="wrap">
+        <div style="text-align:center">
+          <div class="eyebrow">FAQ</div>
+        </div>
+        <h2>Pertanyaan yang Mungkin Masih Mengganjal</h2>
+
+        <div class="faq">
+          <details open>
+            <summary>Ini generator caption atau ide konten?</summary>
+            <p>Bukan. Fokus utamanya menyusun konteks dan arah promosi terlebih dahulu. Setelah itu, hasilnya bisa dibawa ke AI untuk membantu mengeksekusi caption, script, carousel, dan format konten lain.</p>
+          </details>
+          <details>
+            <summary>Harus jago marketing untuk menggunakannya?</summary>
+            <p>Tidak. Anda cukup memahami produk yang dijual dan mengisi konteksnya sejelas mungkin. Istilah strateginya dikerjakan oleh sistem, bukan harus Anda hafalkan.</p>
+          </details>
+          <details>
+            <summary>Bisa dipakai untuk produk selain barang fisik?</summary>
+            <p>Bisa digunakan untuk produk fisik, produk digital, maupun jasa selama penawarannya cukup jelas untuk dibedah.</p>
+          </details>
+          <details>
+            <summary>Apakah hasilnya menjamin order langsung naik?</summary>
+            <p>Tidak ada alat strategi yang bisa menjamin transaksi. Content Strategy Pro membantu memperbaiki arah dan bahan komunikasi; performa akhirnya tetap bergantung pada produk, offer, traffic, distribusi, kualitas eksekusi, dan faktor lain.</p>
+          </details>
+          <details>
+            <summary>Kenapa tidak langsung minta AI bikin 30 ide konten?</summary>
+            <p>Bisa saja. Tetapi tanpa konteks yang cukup, AI cenderung memberi ide yang umum. Di sini Anda menyusun “apa yang ingin dikomunikasikan” lebih dulu, baru menggunakan AI untuk memperbanyak eksekusinya.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section" id="final-cta">
+      <div class="wrap">
+        <div class="final-cta">
+          <div class="eyebrow">Produk Anda sudah ada</div>
+          <h2>Sekarang Bantu Orang Mengerti <span class="accent">Kenapa Mereka Perlu Membelinya.</span></h2>
+          <p class="sublead" style="margin-bottom:22px">
+            Jangan mulai konten berikutnya dari halaman kosong.
+            Mulai dengan arah yang lebih jelas tentang apa yang ingin Anda sampaikan.
+          </p>
+          <!-- Ganti href di bawah dengan URL checkout Anda -->
+          <a class="btn btn-primary" href="#offer">Mulai Susun Arah Promosi →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Content Strategy Pro v4 · Strategy before execution
+    </div>
+  </footer>
+</body>
+</html>
