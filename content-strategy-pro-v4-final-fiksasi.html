@@ -250,7 +250,7 @@
         max-width: 360px !important;
       }
 
-      .mobile-rail > section:not(:first-child) {
+      .mobile-rail>section:not(:first-child) {
         margin-top: 4.5rem;
       }
 
@@ -266,12 +266,14 @@
       line-height: 1.08;
       letter-spacing: -0.04em;
     }
+
     @media (min-width: 640px) {
       .hero-h1 {
         font-size: 2.75rem;
         line-height: 1.15;
       }
     }
+
     @media (min-width: 768px) {
       .hero-h1 {
         font-size: 3.25rem;
@@ -281,23 +283,34 @@
 
     /* Infinite Marquee Social Proof */
     @keyframes marqueeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
+
     .marquee-track {
       display: flex;
       width: max-content;
       animation: marqueeScroll 30s linear infinite;
     }
+
     .marquee-track:hover {
       animation-play-state: paused;
     }
+
     /* High-Converting CTA Button "Minta Diklik" Pulse & Glow Animation */
     @keyframes btnPulseHighlight {
-      0%, 100% {
+
+      0%,
+      100% {
         box-shadow: 0 0 20px rgba(255, 107, 53, 0.4), 0 0 10px rgba(251, 191, 36, 0.3);
         transform: scale(1);
       }
+
       50% {
         box-shadow: 0 0 42px rgba(255, 107, 53, 0.8), 0 0 22px rgba(251, 191, 36, 0.6);
         transform: scale(1.025);
@@ -305,8 +318,14 @@
     }
 
     @keyframes ctaShimmer {
-      0% { transform: translateX(-120%) skewX(-20deg); }
-      30%, 100% { transform: translateX(250%) skewX(-20deg); }
+      0% {
+        transform: translateX(-120%) skewX(-20deg);
+      }
+
+      30%,
+      100% {
+        transform: translateX(250%) skewX(-20deg);
+      }
     }
 
     .cta-shine {
@@ -328,6 +347,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .cta-shine,
       .cta-shine::after {
         animation: none;
@@ -374,7 +394,9 @@
 
       <!-- Main Headline -->
       <h1 class="hero-h1 mt-5 font-black tracking-tight text-white">
-        Promo Tiap Minggu, Ngonten Tiap Hari. <span class="text-transparent bg-clip-text bg-gradient-to-r from-sunset-400 via-sunset-500 to-amber-300">Tapi Kok Orderan Masih Aja Sepi?</span>
+        Promo Tiap Minggu, Ngonten Tiap Hari. <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-sunset-400 via-sunset-500 to-amber-300">Tapi Kok
+          Orderan Masih Aja Sepi?</span>
       </h1>
 
       <!-- Lead / Subhead -->
@@ -389,7 +411,8 @@
           <!-- Cara Biasa -->
           <div class="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-400">
             <span class="text-rose-400 font-black flex-shrink-0 mt-0.5">✕</span>
-            <p><strong class="text-zinc-300">Tanpa arah:</strong> AI cuma kasih ide generik — muter di fitur, diskon, dan testimoni.</p>
+            <p><strong class="text-zinc-300">Tanpa arah:</strong> Idenya mentok — akhirnya muter di fitur, diskon,
+              dan testimoni yang itu-itu saja.</p>
           </div>
 
           <div class="border-t hairline"></div>
@@ -397,7 +420,8 @@
           <!-- Dengan CSP -->
           <div class="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-200">
             <span class="text-sunset-400 font-black flex-shrink-0 mt-0.5">✓</span>
-            <p><strong class="text-white">Dengan CSP:</strong> Kerangka strateginya sudah jadi ➔ Arah konten terpetakan & siap memicu orderan.</p>
+            <p><strong class="text-white">Dengan CSP:</strong> Kerangka strateginya sudah jadi — tinggal eksekusi lewat
+              AI yang sudah dipersonalisasi khusus untuk produk Anda.</p>
           </div>
         </div>
       </div>
@@ -406,8 +430,7 @@
       <div class="mt-8 flex items-center justify-center">
         <a href="#offer"
           class="cta-shine w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-sunset-500 px-8 py-4 text-base font-extrabold text-white shadow-glow hover:bg-sunset-400 focus:outline-none focus:ring-2 focus:ring-sunset-300">
-          <span>Susun Arah Konten Produk Saya</span>
-          <span aria-hidden="true">→</span>
+          <span>Susun Strategi Konten Saya</span>
         </a>
       </div>
 
@@ -422,11 +445,12 @@
       <div class="text-center">
         <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Kejadian yang Sering Berulang</p>
         <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          Bukan Kurang Rajin. Tapi Setiap Mau Ngonten, <span class="text-sunset-400">Mulainya Tanpa Pondasi, dari Nol Lagi.</span>
+          Bukan Kurang Rajin. Tapi Setiap Mau Ngonten, <span class="text-sunset-400">Mulainya Tanpa Pondasi, dari Nol
+            Lagi.</span>
         </h2>
         <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
           Masalahnya sering terasa kecil saat satu per satu. Tapi kalau berulang tiap hari, promosi jadi capek dan
-          arahnya gampang berubah-ubah.
+          effort ngonten tak membuahkan hasil.
         </p>
       </div>
 
@@ -441,7 +465,7 @@
         <div class="soft-card rounded-2xl p-5 border-l-4 border-l-amber-500/80 text-left">
           <div class="plain-term text-amber-400">Buka AI</div>
           <h3 class="mt-1.5 font-bold text-white text-base">Minta ide konten. Dapat banyak. Tapi terasa generik.</h3>
-          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Idenya ada, tapi begitu jadi konten —
+          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Idenya ada, tapi begitu jadi konten
             hasilnya tetap datar. Karena yang kurang bukan ide, tapi arahnya.</p>
         </div>
 
@@ -465,12 +489,12 @@
     <section class="mt-20 fade-up">
       <div class="orange-card rounded-3xl p-6 sm:p-8">
         <div class="text-center">
-          <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-300">Cara Berpikir Sebelum Posting</p>
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-300">Titik Mulai yang Perlu Digeser</p>
           <h2 class="mt-2.5 text-2xl sm:text-3xl font-black text-white">
-            Konten yang Menjual Tidak Dimulai dari Ide Konten.
+            Konten yang Menghasilkan Tidak Dimulai dari Cara Bikin Konten yang Menarik Saja.
           </h2>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-300 max-w-lg mx-auto">
-            Tapi dari satu pertanyaan yang mengubah seluruh arah konten Anda.
+            Tapi dari memahami kenapa orang akhirnya memutuskan untuk membeli.
           </p>
         </div>
 
@@ -480,7 +504,7 @@
               <span>✕</span> BUKAN MULAI DARI
             </div>
             <p class="mt-2 text-sm sm:text-base font-bold text-zinc-300 leading-snug">
-              "Hari ini posting apa ya?"
+              "Gimana cara bikin konten yang menarik untuk produk ini?"
             </p>
           </div>
 
@@ -489,7 +513,7 @@
               <span>✓</span> MULAI DARI
             </div>
             <p class="mt-2 text-sm sm:text-base font-black text-white leading-snug">
-              "Apa yang bikin orang akhirnya bilang 'Saya butuh ini?'"
+              "Apa yang bikin orang akhirnya merasa butuh produk ini sekarang?"
             </p>
           </div>
         </div>
@@ -499,10 +523,10 @@
     <!-- MECHANISM SECTION -->
     <section class="mt-20 fade-up">
       <div class="text-center">
-        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Cara Kerja</p>
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Content Strategy Pro v.4</p>
         <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          Dari "Produk Apa Adanya" Menjadi <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Arah Konten yang Tajam & Siap Eksekusi.</span>
+          Anda Ceritakan Produknya. <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Sistem yang Menyusun Arah Kontennya.</span>
         </h2>
         <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
           Anda tidak perlu jadi jago marketing. Sistem ini mengubah informasi produk jadi pondasi konten yang siap
@@ -510,33 +534,292 @@
         </p>
       </div>
 
+      <!-- UI PREVIEW CONTAINER -->
+      <div class="mt-8 overflow-hidden rounded-2xl border orange-line bg-space-950/80 shadow-glow">
+        <img src="csp-dashboard-preview.png" alt="Content Strategy Pro v.4 Form Preview" class="w-full h-auto block"
+          loading="lazy" />
+      </div>
+
+      <!-- 3 STEP CARDS -->
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-left">
         <div class="rounded-2xl border hairline bg-space-950/70 p-5 soft-card">
-          <div class="plain-term">01 • Fakta Dasar</div>
-          <h3 class="mt-2 font-bold text-white text-base">Cukup jawab fakta produk yang Anda tahu</h3>
-          <p class="mt-1.5 text-xs sm:text-sm text-zinc-400 leading-relaxed">Tidak perlu riset rumit atau istilah marketing. Cukup masukkan nama produk, fungsi utama, dan siapa calon pembelinya.</p>
+          <div class="plain-term">01 • Informasi Produk</div>
+          <h3 class="mt-2 font-bold text-white text-base">Cukup jawab hal-hal dasar seputar produk Anda</h3>
+          <p class="mt-1.5 text-xs sm:text-sm text-zinc-400 leading-relaxed">Tidak perlu riset rumit atau istilah
+            marketing. Cukup masukkan nama produk, fungsi utama, dan keunggulan yang ditawarkan.</p>
         </div>
 
         <div class="rounded-2xl border orange-line bg-sunset-500/10 p-5 orange-card">
-          <div class="plain-term text-sunset-300">02 • Framework Strategi</div>
-          <h3 class="mt-2 font-bold text-white text-base">Sistem memproses lewat framework strategis</h3>
-          <p class="mt-1.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">Produk dibedah otomatis — menemukan alasan beli, sudut komunikasi, hingga pesan kunci yang menggugah pembeli.</p>
+          <div class="plain-term text-sunset-300">02 • Pemetaan Strategi</div>
+          <h3 class="mt-2 font-bold text-white text-base">Meramu Peta Strategi Lengkap</h3>
+          <p class="mt-1.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">Content Strategy Pro otomatis membedah produk Anda menjadi peta strategi lengkap — memetakan sudut pandang unik, pemicu emosi, hingga pesan jualan yang relevan dengan target Anda.</p>
         </div>
 
         <div class="rounded-2xl border hairline bg-space-950/70 p-5 soft-card">
-          <div class="plain-term">03 • Master Prompt &amp; Strategi</div>
-          <h3 class="mt-2 font-bold text-white text-base">Dapatkan bahan konten yang siap dieksekusi</h3>
-          <p class="mt-1.5 text-xs sm:text-sm text-zinc-400 leading-relaxed">Lengkap dengan angle, arah hook, pesan utama, hingga master prompt siap pakai untuk dipasang ke AI atau tim Anda.</p>
+          <div class="plain-term">03 • Master Prompt AI</div>
+          <h3 class="mt-2 font-bold text-white text-base">Master Prompt Instan Siap Pakai</h3>
+          <p class="mt-1.5 text-xs sm:text-sm text-zinc-400 leading-relaxed">Seluruh pilar strategi dirangkum dalam master prompt — tinggal copy-paste ke AI (ChatGPT/Claude) tanpa perlu pusing mikir perintah dari nol.</p>
         </div>
       </div>
 
-      <!-- UI PREVIEW CONTAINER -->
-      <div class="mt-8 overflow-hidden rounded-2xl border orange-line bg-space-950/80 shadow-glow">
-        <img src="csp-dashboard-preview.png" alt="Content Strategy Pro v.4 Form Preview" class="w-full h-auto block" loading="lazy" />
-      </div>
-      <p class="mt-3.5 text-center text-xs sm:text-sm text-zinc-300 font-medium max-w-lg mx-auto">
-        Cukup masukkan fakta dasar produk yang Anda tahu — sistem yang otomatis meramu arah strategi dan susunan prompt-nya.
+      <!-- Product Format Clarity Text (Clean, Airy & Unboxed) -->
+      <p class="mt-6 text-center text-xs sm:text-sm text-zinc-300 leading-relaxed max-w-xl mx-auto">
+        Content Strategy Pro v.4 adalah <span class="text-white font-semibold">tool riset &amp; strategi</span> yang membedah
+        informasi produk Anda menjadi <span class="text-sunset-300 font-semibold">peta strategi utuh + master prompt
+          siap pakai</span> untuk digunakan bersama AI (ChatGPT/Claude) — tanpa perlu install aplikasi apa pun.
       </p>
+    </section>
+
+    <!-- BEFORE VS AFTER AI COMPARISON (PROOF OF DIFFERENCE SECTION) -->
+    <section class="mt-20 fade-up">
+      <div class="text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bukti Perbedaan Hasil</p>
+        <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
+          Sama-sama Pakai AI. Tapi Lihat Bedanya <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Saat Mulai dari Peta Strategi.</span>
+        </h2>
+        <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
+          AI tanpa strategi hanya menghasilkan ide generik yang mudah ditebak. Dengan kerangka Content Strategy Pro v.4,
+          AI bekerja selayaknya strategist profesional — menggali angle komunikasi yang tepat sasaran dan menyentuh emosi calon pembeli.
+        </p>
+      </div>
+
+      <!-- 2 Side-by-Side Comparison Cards Container (Symmetrical ChatGPT UI Frames) -->
+      <div class="mobile-copy-rail mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 text-left items-start">
+
+        <!-- CARD KIRI: AI TANPA STRATEGI -->
+        <div class="rounded-3xl border hairline bg-space-950/80 p-6 flex flex-col justify-between soft-card opacity-90">
+          <div>
+            <!-- Badge Kiri (Centered) -->
+            <div class="flex justify-center mb-4">
+              <span
+                class="inline-flex items-center gap-1.5 rounded-full bg-rose-500/15 border border-rose-500/30 px-3.5 py-1 text-[11px] font-bold text-rose-400">
+                <span>✕</span> LANGSUNG MINTA IDE KE AI
+              </span>
+            </div>
+
+            <!-- ChatGPT UI Box Kiri -->
+            <div class="rounded-2xl border hairline bg-black/70 overflow-hidden shadow-lg">
+              <!-- ChatGPT Header -->
+              <div class="bg-zinc-900/90 px-3.5 py-2.5 border-b hairline flex items-center justify-between text-xs">
+                <span class="font-bold text-zinc-300 text-[11.5px]">ChatGPT</span>
+              </div>
+
+              <div class="p-3.5 space-y-3 text-xs">
+                <!-- White Prompt Bubble -->
+                <div class="rounded-xl bg-white p-3 text-zinc-900 shadow-sm font-mono text-[11px]">
+                  "Bikinkan 5 ide konten jualan untuk Pelindung Kasur Waterproof yang menarik pembeli."
+                </div>
+
+                <!-- AI Output List -->
+                <div class="p-2 space-y-1.5 font-mono text-xs text-zinc-300">
+                  <span class="text-zinc-500 font-bold block mb-1 text-[10px] uppercase">Output AI:</span>
+                  <p class="text-zinc-400">• "5 Manfaat Menggunakan Mattress Protector"</p>
+                  <p class="text-zinc-400">• "Tips Menjaga Kasur Tetap Bersih"</p>
+                  <p class="text-zinc-400">• "Cara Memilih Pelindung Kasur"</p>
+                  <p class="text-zinc-400">• "Kenapa Kasur Perlu Dilindungi?"</p>
+                  <p class="text-zinc-400">• "Promo Pelindung Kasur Minggu Ini"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Evaluation Badges Kiri -->
+          <div class="mt-4 border-t hairline pt-3.5 text-center">
+            <p class="text-xs font-semibold text-rose-400 italic">
+              "Idenya tidak salah. Tapi siapa pun bisa menebaknya."
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD KANAN: AI + CONTENT STRATEGY PRO v.4 -->
+        <div
+          class="rounded-3xl border orange-line bg-gradient-to-b from-sunset-950/40 via-space-900/90 to-space-950 p-6 flex flex-col justify-between orange-card shadow-glow">
+          <div>
+            <!-- Badge Kanan (Centered) -->
+            <div class="flex justify-center mb-4">
+              <span
+                class="inline-flex items-center gap-1.5 rounded-full bg-sunset-500/20 border orange-line px-3.5 py-1 text-[11px] font-bold text-sunset-300">
+                <span>⚡</span> PRODUK YANG SAMA → DIBEDAH CSP v.4
+              </span>
+            </div>
+
+            <!-- ChatGPT UI Box Kanan -->
+            <div class="rounded-2xl border orange-line bg-black/70 overflow-hidden shadow-2xl">
+              <!-- ChatGPT Header -->
+              <div class="bg-zinc-900/90 px-3.5 py-2.5 border-b hairline flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span class="font-bold text-white text-[11.5px]">ChatGPT + CSP v.4 Engine</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 space-y-3 text-xs">
+                <!-- White Prompt Bubble (Literal CSP Prompt Input) -->
+                <div class="rounded-xl bg-white p-3 text-zinc-900 shadow-sm font-mono text-[11px]">
+                  "Jalankan Master Prompt &amp; Angle Map CSP v.4 untuk Produk Pelindung Kasur Waterproof."
+                </div>
+
+                <!-- AI Output Live Sequence Stream Container (7-Step Complete Strategic Flow) -->
+                <div class="p-1 relative min-h-[195px] flex flex-col justify-center">
+
+                  <!-- Step 1: 01. Audience Snapshot -->
+                  <div id="aiStreamStep1" class="ai-stream-step space-y-2 transition-all duration-200">
+                    <div
+                      class="text-sunset-400 font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-between">
+                      <span>👤 01. AUDIENCE SNAPSHOT:</span>
+                      <span class="text-[9.5px] text-zinc-500 font-mono">1/7</span>
+                    </div>
+                    <div class="rounded-xl border orange-line bg-sunset-500/10 p-3 space-y-1.5 text-xs text-zinc-200">
+                      <div><span class="text-sunset-300 font-semibold">• Profil:</span> Orang tua pekerja dengan balita
+                        (fase belajar lepas pampers).</div>
+                      <div><span class="text-sunset-300 font-semibold">• Kondisi Batin:</span> Jam tidur adalah waktu
+                        pemulihan tenaga. Bangun tengah malam untuk mengurus kasur basah adalah pemicu frustrasi yang
+                        sangat nyata bagi orang tua pekerja.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Step 2: 02. Problem & Desire Map -->
+                  <div id="aiStreamStep2" class="ai-stream-step hidden space-y-2 transition-all duration-200">
+                    <div
+                      class="text-amber-300 font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-between">
+                      <span>🗺️ 02. PROBLEM &amp; DESIRE MAP:</span>
+                      <span class="text-[9.5px] text-zinc-500 font-mono">2/7</span>
+                    </div>
+                    <div
+                      class="rounded-xl border border-amber-400/30 bg-amber-500/10 p-3 space-y-1.5 text-xs text-zinc-200 shadow-glow">
+                      <div><span class="text-amber-300 font-semibold">• Akar Masalah:</span> Kasur springbed jutaan
+                        rupiah busa dalamnya tidak bisa dicuci seperti pakaian biasa. Sekali merembes, noda dan aromanya
+                        sulit dihilangkan.</div>
+                      <div><span class="text-amber-300 font-semibold">• Kebutuhan Nyata:</span> Proteksi yang andal agar
+                        anak
+                        bebas beraktivitas tanpa orang tua cemas kasur rusak.</div>
+                    </div>
+                  </div>
+
+                  <!-- Step 3: 03. Buying Situations -->
+                  <div id="aiStreamStep3" class="ai-stream-step hidden space-y-2 transition-all duration-200">
+                    <div
+                      class="text-sunset-300 font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-between">
+                      <span>🧭 03. BUYING SITUATION:</span>
+                      <span class="text-[9.5px] text-zinc-500 font-mono">3/7</span>
+                    </div>
+                    <div class="rounded-xl border orange-line bg-space-900/90 p-3 space-y-1.5 text-xs text-zinc-200">
+                      <div><span class="text-sunset-300 font-semibold">• Momen Kritis:</span> Jam 2:15 pagi saat kasur
+                        basah dan sadar besok pagi harus mulai beraktivitas dan kerja.</div>
+                      <div><span class="text-sunset-300 font-semibold">• Trigger Beli:</span> Bukan karena tergiur
+                        diskon,
+                        tapi butuh solusi praktis agar masalah tengah malam beres cepat tanpa repot membongkar kasur.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Step 4: 04 & 05. Content Message & Angles -->
+                  <div id="aiStreamStep4" class="ai-stream-step hidden space-y-2 transition-all duration-200">
+                    <div
+                      class="text-sunset-400 font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-between">
+                      <span>💬 04-05. MESSAGE &amp; ANGLE OPTIONS:</span>
+                      <span class="text-[9.5px] text-zinc-500 font-mono">4/7</span>
+                    </div>
+                    <div class="rounded-xl border orange-line bg-sunset-500/10 p-3 space-y-1.5 text-xs text-zinc-200">
+                      <div><span class="text-sunset-300 font-semibold">• Pesan Utama:</span> "Jangan korbankan kasur
+                        dan waktu istirahat berharga Anda."</div>
+                      <div class="space-y-1 pt-1 border-t hairline">
+                        <div class="text-[10px] text-amber-300 font-bold uppercase">• Opsi Angle Konten:</div>
+                        <div class="text-zinc-300">① <span class="text-white font-medium">Angle A:</span> The 2 AM
+                          Nightmare <span class="text-zinc-400 text-[11px]">(Kelelahan Waktu)</span></div>
+                        <div class="text-zinc-300">② <span class="text-white font-medium">Angle B:</span> Selamatkan
+                          Kasur Jutaan Rupiah <span class="text-zinc-400 text-[11px]">(Kerugian Finansial)</span></div>
+                        <div class="text-zinc-300">③ <span class="text-white font-medium">Angle C:</span> Asuransi Tidur
+                          Tenang <span class="text-zinc-400 text-[11px]">(Ketenangan Pikiran)</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Step 5: 06. Hook Directions -->
+                  <div id="aiStreamStep5" class="ai-stream-step hidden space-y-2 transition-all duration-200">
+                    <div
+                      class="text-rose-300 font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-between">
+                      <span>🪝 06. HOOK DIRECTION (REALITY CHECK):</span>
+                      <span class="text-[9.5px] text-zinc-500 font-mono">5/7</span>
+                    </div>
+                    <div
+                      class="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3 space-y-1.5 text-xs text-zinc-200">
+                      <div><span class="text-rose-300 font-semibold">• Arah Pembuka:</span> Mengangkat realita repotnya
+                        mengurus kasur di tengah malam.</div>
+                      <div class="font-medium italic text-zinc-100">“Yang bikin capek jam 2 pagi sebetulnya bukan anak
+                        ngompolnya. Tapi bayangan harus membongkar kasur di tengah malam.”</div>
+                    </div>
+                  </div>
+
+                  <!-- Step 6: Visual Transition & Emphasis (Strategi Terkunci Siap Jadi Konten) -->
+                  <div id="aiStreamStep6" class="ai-stream-step hidden space-y-2 transition-all duration-200">
+                    <div
+                      class="text-amber-300 font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-between">
+                      <span>⚡ DARI STRATEGI → SIAP JADI KONTEN:</span>
+                      <span class="text-[9.5px] text-amber-400 font-mono">6/7</span>
+                    </div>
+                    <div
+                      class="rounded-xl border border-amber-400/40 bg-gradient-to-br from-amber-500/20 via-sunset-500/20 to-space-950 p-3.5 space-y-2 text-xs shadow-glow text-center">
+                      <div
+                        class="inline-flex items-center gap-1.5 rounded-full bg-amber-400/20 border border-amber-400/30 px-2.5 py-0.5 text-[10.5px] font-extrabold text-amber-300">
+                        <span>✓</span> 5 PILAR STRATEGIS TELAH TERKUNCI
+                      </div>
+                      <p class="text-xs text-white font-semibold leading-relaxed">
+                        Konteks audiens, keresahan, &amp; angle di atas <span class="text-sunset-300">otomatis diramu
+                          CSP v.4</span> menjadi naskah konten yang terarah dan siap diproduksi!
+                      </p>
+                      <div class="text-[10px] text-zinc-400 font-mono">
+                        ↓ Menghasilkan Draft Naskah Final di Bawah Ini ↓
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Step 7: 09. Naskah Siap Eksekusi (BOOM) -->
+                  <div id="aiStreamStep7" class="ai-stream-step hidden space-y-2 transition-all duration-200">
+                    <div
+                      class="text-sunset-400 font-bold text-[10.5px] uppercase tracking-wider flex items-center justify-between">
+                      <span>🔥 09. NASKAH SIAP EKSEKUSI (TERARAH):</span>
+                      <span class="text-[9.5px] text-amber-300 font-mono">7/7</span>
+                    </div>
+                    <div
+                      class="rounded-xl border orange-line bg-gradient-to-r from-sunset-500/20 via-amber-500/15 to-sunset-500/20 p-3 space-y-1.5 text-xs shadow-glow">
+                      <div class="text-[10px] uppercase font-bold text-amber-300 tracking-wider">• Penyelamat Kasur
+                        &amp; Ketenangan Istirahat:</div>
+                      <p class="font-bold text-white leading-relaxed">
+                        “Busa kasur itu bukan barang yang mudah dibersihkan di tengah malam.<br><br>
+                        Begitu dipasang pelindung waterproof ini, lapisannya menahan cairan agar tidak tembus ke kasur
+                        utama. Pas kejadian jam 2 pagi, tinggal lepas lapisannya, kasur tetap aman, dan Anda bisa
+                        langsung lanjut istirahat.”
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Summary Kanan -->
+          <div class="mt-4 border-t orange-line pt-3.5 text-center">
+            <p class="text-xs font-bold text-sunset-300">
+              🎯 Dari sekadar menyebutkan fitur "tahan air" → berubah menjadi pesan yang relevan dengan situasi nyata
+              pembeli.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Takeaway Banner (Center Below Cards) -->
+      <div class="mt-6 text-center">
+        <p
+          class="text-xs sm:text-sm font-extrabold text-zinc-200 max-w-xl mx-auto rounded-2xl border hairline bg-space-950/70 py-3.5 px-5 shadow-sm">
+          Produknya sama. Yang berubah adalah seberapa dalam kita memahami <span class="text-sunset-300">alasan orang
+            membutuhkannya.</span> 🔥
+        </p>
+      </div>
     </section>
 
 
@@ -550,7 +833,7 @@
           <span class="text-sunset-400">Tapi Menentukan Arah yang Memicu Orderan.</span>
         </h2>
         <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
-          Masalahnya bukan kekurangan ide. Tapi ide sebanyak apa pun tidak berguna kalau tidak ada arah penjualannya.
+          Bukan sekadar ide generik, tapi kerangka utuh: alasan beli produk, <span class="text-sunset-300 font-semibold">inti penawaran</span>, beragam angle promosi, arah hook, hingga susunan format konten.
         </p>
       </div>
 
@@ -559,7 +842,8 @@
           Tidak Ada Lagi Momen Duduk Melamun di Depan Canva atau ChatGPT.
         </h3>
         <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-300 max-w-xl mx-auto">
-          Kerangka strateginya sudah siap di tangan. Jadi AI dan Canva cukup dipakai untuk merapikan &amp; mengeksekusi — bukan tempat tebak-tebakan dari nol.
+          Kerangka strateginya sudah siap di tangan. Jadi AI dan Canva cukup dipakai untuk merapikan &amp; mengeksekusi
+          — bukan tempat tebak-tebakan dari nol.
         </p>
 
         <div class="mt-6 flex flex-wrap justify-center items-center gap-2 text-xs sm:text-sm font-bold">
@@ -570,7 +854,8 @@
           <span class="rounded-full border hairline bg-black/40 px-3.5 py-1.5 text-zinc-300">Master Prompt Ready</span>
           <span class="flow-arrow">→</span>
           <span
-            class="rounded-full border orange-line bg-sunset-500/15 px-3.5 py-1.5 text-sunset-300 font-extrabold">Siap Eksekusi</span>
+            class="rounded-full border orange-line bg-sunset-500/15 px-3.5 py-1.5 text-sunset-300 font-extrabold">Siap
+            Eksekusi</span>
         </div>
       </div>
     </section>
@@ -639,9 +924,8 @@
           </div>
 
           <div class="sm:col-span-2 border-t hairline pt-4">
-            <div class="text-xs font-mono font-bold text-sunset-300">09. Prompt Siap Eksekusi</div>
-            <p class="mt-1 text-xs text-zinc-400 leading-relaxed">Bawa konteks yang sudah disusun ke AI untuk membantu
-              membuat konten lebih konsisten.</p>
+            <div class="text-xs font-mono font-bold text-sunset-300">09. Master Prompt AI</div>
+            <p class="mt-1 text-xs text-zinc-400 leading-relaxed">Tinggal copy-paste brief ke ChatGPT atau Claude — AI langsung paham konteks produk Anda &amp; menghasilkan draft konten yang tepat sasaran.</p>
           </div>
         </div>
       </div>
@@ -652,28 +936,28 @@
       <div class="text-center">
         <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Siapa yang Paling Cocok?</p>
         <h2 class="mt-3 text-2xl sm:text-3xl font-black tracking-tight text-white">
-          Bukan Harus Jago Marketing. <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Yang Penting Anda Punya Produk yang Ingin Dijual.</span>
+          Bukan Cuma untuk Orang Marketing. <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Ini Disiapkan untuk Anda yang Siap Mengubah Konten Jadi Orderan Berulang.</span>
         </h2>
       </div>
 
       <div class="mobile-copy-rail mt-7 grid grid-cols-1 gap-3.5">
         <div class="soft-card rounded-2xl p-5 text-left">
           <p class="font-bold text-white text-base">📦 Produknya sudah ada.</p>
-          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Fisik, digital, atau jasa — selama Anda
+          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Fisik, digital, atau jasa selama Anda
             bisa menjelaskan apa yang dijual.</p>
         </div>
 
         <div class="soft-card rounded-2xl p-5 text-left">
           <p class="font-bold text-white text-base">🧭 Pernah mencoba ngonten.</p>
-          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Anda sudah merasakan rasanya rutin
-            posting tapi tetap sering kehabisan arah.</p>
+          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Anda sudah merasakan rasanya rutin posting
+            tiap hari, tapi hasil orderan tetap sepi.</p>
         </div>
 
         <div class="soft-card rounded-2xl p-5 text-left">
           <p class="font-bold text-white text-base">📝 Siap meluangkan 3–5 menit.</p>
-          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Bukan sekadar asal klik tanpa mikir, tapi
-            siap memasukkan fakta dasar produk Anda.</p>
+          <p class="mt-1.5 text-xs sm:text-sm leading-relaxed text-zinc-400">Cukup luangkan 3–5 menit untuk menjawab
+            hal-hal dasar seputar produk Anda, tanpa perlu pusing memikirkan istilah strateginya.</p>
         </div>
       </div>
 
@@ -687,8 +971,8 @@
       <div class="text-center">
         <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bukti Nyata Pengguna</p>
         <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          Kini Mereka Tidak Lagi Promosi <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Tanpa Arah Konten yang Jelas.</span>
+          Mereka Sudah Membuktikan Bedanya. <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Dari Ngonten Ala Kadarnya Jadi Punya Peta Strategi Konten yang Jelas.</span>
         </h2>
         <p class="mt-3 text-xs sm:text-sm text-zinc-400 max-w-md mx-auto">
           Tanggapan riil dari pebisnis &amp; content creator setelah membedah produk mereka lewat Content Strategy Pro.
@@ -699,10 +983,13 @@
       <div class="mt-8 overflow-hidden marquee-fade py-2">
         <div class="marquee-track gap-4">
           <!-- Card 1 -->
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-400 to-amber-500 flex items-center justify-center font-bold text-space-950 text-xs">RD</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-400 to-amber-500 flex items-center justify-center font-bold text-space-950 text-xs">
+                  RD</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Rian D.</h4>
                   <span class="text-[11px] text-zinc-400">Pebisnis Brand Lokal</span>
@@ -711,15 +998,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              "Dulu udah rutin ngonten tiap hari tapi rasanya gak ada hasil. Pas coba bedah pake CSP, baru sadar ternyata pesan promosi gue selama ini gak nyambung ke alasan beli. Langsung dapet arah!"
+              "Dulu udah rutin ngonten tiap hari tapi rasanya gak ada hasil. Pas coba bedah pake CSP, baru sadar
+              ternyata pesan promosi gue selama ini gak nyambung ke alasan beli. Langsung dapet arah!"
             </p>
           </div>
 
           <!-- Card 2 -->
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-400 to-sunset-500 flex items-center justify-center font-bold text-space-950 text-xs">NA</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-400 to-sunset-500 flex items-center justify-center font-bold text-space-950 text-xs">
+                  NA</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Nadia A.</h4>
                   <span class="text-[11px] text-sunset-300">Fashion &amp; Apparel Seller</span>
@@ -728,15 +1019,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
-              "Beda banget sama prompt generator murah yang cuma kasih ide klise kayak '5 tips pilih baju'. CSP ini beneran ngebongkar alasan kenapa orang harus checkout sekarang."
+              "Beda banget sama prompt generator murah yang cuma kasih ide klise kayak '5 tips pilih baju'. CSP ini
+              beneran ngebongkar alasan kenapa orang harus checkout sekarang."
             </p>
           </div>
 
           <!-- Card 3 -->
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-white text-xs">BW</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-white text-xs">
+                  BW</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Bagas W.</h4>
                   <span class="text-[11px] text-zinc-400">Social Media Specialist</span>
@@ -745,15 +1040,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              "Dulu tiap mau bikin kalender konten bisa melamun berjam-jam di depan ChatGPT &amp; Canva. Sekarang pas udah dapet peta strateginya, eksekusi konten jadi jauh lebih cepat!"
+              "Dulu tiap mau bikin kalender konten bisa melamun berjam-jam di depan ChatGPT &amp; Canva. Sekarang pas
+              udah dapet peta strateginya, eksekusi konten jadi jauh lebih cepat!"
             </p>
           </div>
 
           <!-- Card 4 -->
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center font-bold text-space-950 text-xs">FK</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center font-bold text-space-950 text-xs">
+                  FK</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Fikri K.</h4>
                   <span class="text-[11px] text-zinc-400">Creator &amp; Affiliate Marketer</span>
@@ -762,15 +1061,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              "Satu kali bedah fakta produk 5 menit, dapet amunisi konten yang bisa dipakai berbulan-bulan. Gak perlu bingung lagi mau posting apa besok."
+              "Satu kali bedah fakta produk 5 menit, dapet amunisi konten yang bisa dipakai berbulan-bulan. Gak perlu
+              bingung lagi mau posting apa besok."
             </p>
           </div>
 
           <!-- Card 5 -->
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-500 to-amber-300 flex items-center justify-center font-bold text-space-950 text-xs">SL</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-500 to-amber-300 flex items-center justify-center font-bold text-space-950 text-xs">
+                  SL</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Siti L.</h4>
                   <span class="text-[11px] text-sunset-300">Owner F&amp;B / Kuliner</span>
@@ -779,15 +1082,20 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
-              "Dulu jualan cuma bisa ngandelin diskon potongan harga. Pas pesannya dibedah pake CSP, kontennya jadi lebih menggugah dan bikin orang kepingin order harga normal!"
+              "Dulu jualan cuma bisa ngandelin diskon potongan harga. Pas pesannya dibedah pake CSP, kontennya jadi
+              lebih menggugah dan bikin orang kepingin order harga normal!"
             </p>
           </div>
 
           <!-- Duplicate Set for Seamless Loop -->
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card" aria-hidden="true">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card"
+            aria-hidden="true">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-400 to-amber-500 flex items-center justify-center font-bold text-space-950 text-xs">RD</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-400 to-amber-500 flex items-center justify-center font-bold text-space-950 text-xs">
+                  RD</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Rian D.</h4>
                   <span class="text-[11px] text-zinc-400">Pebisnis Brand Lokal</span>
@@ -796,14 +1104,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              "Dulu udah rutin ngonten tiap hari tapi rasanya gak ada hasil. Pas coba bedah pake CSP, baru sadar ternyata pesan promosi gue selama ini gak nyambung ke alasan beli. Langsung dapet arah!"
+              "Dulu udah rutin ngonten tiap hari tapi rasanya gak ada hasil. Pas coba bedah pake CSP, baru sadar
+              ternyata pesan promosi gue selama ini gak nyambung ke alasan beli. Langsung dapet arah!"
             </p>
           </div>
 
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow" aria-hidden="true">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow"
+            aria-hidden="true">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-400 to-sunset-500 flex items-center justify-center font-bold text-space-950 text-xs">NA</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-amber-400 to-sunset-500 flex items-center justify-center font-bold text-space-950 text-xs">
+                  NA</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Nadia A.</h4>
                   <span class="text-[11px] text-sunset-300">Fashion &amp; Apparel Seller</span>
@@ -812,14 +1125,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
-              "Beda banget sama prompt generator murah yang cuma kasih ide klise kayak '5 tips pilih baju'. CSP ini beneran ngebongkar alasan kenapa orang harus checkout sekarang."
+              "Beda banget sama prompt generator murah yang cuma kasih ide klise kayak '5 tips pilih baju'. CSP ini
+              beneran ngebongkar alasan kenapa orang harus checkout sekarang."
             </p>
           </div>
 
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card" aria-hidden="true">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card"
+            aria-hidden="true">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-white text-xs">BW</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center font-bold text-white text-xs">
+                  BW</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Bagas W.</h4>
                   <span class="text-[11px] text-zinc-400">Social Media Specialist</span>
@@ -828,14 +1146,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              "Dulu tiap mau bikin kalender konten bisa melamun berjam-jam di depan ChatGPT &amp; Canva. Sekarang pas udah dapet peta strateginya, eksekusi konten jadi jauh lebih cepat!"
+              "Dulu tiap mau bikin kalender konten bisa melamun berjam-jam di depan ChatGPT &amp; Canva. Sekarang pas
+              udah dapet peta strateginya, eksekusi konten jadi jauh lebih cepat!"
             </p>
           </div>
 
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card" aria-hidden="true">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border hairline bg-space-950/90 p-4 sm:p-5 text-left soft-card"
+            aria-hidden="true">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center font-bold text-space-950 text-xs">FK</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center font-bold text-space-950 text-xs">
+                  FK</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Fikri K.</h4>
                   <span class="text-[11px] text-zinc-400">Creator &amp; Affiliate Marketer</span>
@@ -844,14 +1167,19 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-300 leading-relaxed">
-              "Satu kali bedah fakta produk 5 menit, dapet amunisi konten yang bisa dipakai berbulan-bulan. Gak perlu bingung lagi mau posting apa besok."
+              "Satu kali bedah fakta produk 5 menit, dapet amunisi konten yang bisa dipakai berbulan-bulan. Gak perlu
+              bingung lagi mau posting apa besok."
             </p>
           </div>
 
-          <div class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow" aria-hidden="true">
+          <div
+            class="w-[300px] sm:w-[340px] flex-shrink-0 rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-left orange-card shadow-glow"
+            aria-hidden="true">
             <div class="flex items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
-                <div class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-500 to-amber-300 flex items-center justify-center font-bold text-space-950 text-xs">SL</div>
+                <div
+                  class="h-9 w-9 rounded-full bg-gradient-to-br from-sunset-500 to-amber-300 flex items-center justify-center font-bold text-space-950 text-xs">
+                  SL</div>
                 <div>
                   <h4 class="text-xs sm:text-sm font-bold text-white leading-none">Siti L.</h4>
                   <span class="text-[11px] text-sunset-300">Owner F&amp;B / Kuliner</span>
@@ -860,7 +1188,8 @@
               <div class="text-amber-400 text-xs">★★★★★</div>
             </div>
             <p class="mt-3 text-xs sm:text-sm text-zinc-200 leading-relaxed">
-              "Dulu jualan cuma bisa ngandelin diskon potongan harga. Pas pesannya dibedah pake CSP, kontennya jadi lebih menggugah dan bikin orang kepingin order harga normal!"
+              "Dulu jualan cuma bisa ngandelin diskon potongan harga. Pas pesannya dibedah pake CSP, kontennya jadi
+              lebih menggugah dan bikin orang kepingin order harga normal!"
             </p>
           </div>
         </div>
@@ -869,36 +1198,34 @@
 
     <!-- CONSISTENCY SECTION -->
     <section class="mt-20 fade-up">
-      <div class="orange-card rounded-3xl p-6 sm:p-8">
-        <div class="text-center">
-          <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-300">Bukan Sekali Pakai Lalu Lupa</p>
-          <h2 class="mt-2.5 text-2xl sm:text-3xl font-black text-white">
-            Setelah Tahu Arah Kontennya, <br class="hidden sm:inline" />
-            <span class="text-sunset-300">Anda Dibantu Menjaganya Tetap Konsisten.</span>
-          </h2>
-          <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-300 max-w-lg mx-auto">
-            Gunakan hasil bedah sebagai pegangan saat membuat banyak konten berikutnya.
-          </p>
+      <div class="text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bukan Sekali Pakai Lalu Lupa</p>
+        <h2 class="mt-2.5 text-2xl sm:text-4xl font-black tracking-tight text-white">
+          Setelah Tahu Arah Kontennya, <br class="hidden sm:inline" />
+          <span class="text-sunset-400">Anda Dibantu Menjaganya Tetap Konsisten.</span>
+        </h2>
+        <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-300 max-w-lg mx-auto">
+          Gunakan hasil bedah sebagai pegangan saat membuat banyak konten berikutnya.
+        </p>
+      </div>
+
+      <div class="mobile-copy-rail mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-left">
+        <div class="rounded-2xl border hairline bg-space-950/70 p-4 sm:p-5 soft-card">
+          <p class="text-xs font-mono font-bold text-sunset-400 uppercase">🎯 Core Message</p>
+          <p class="mt-1.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">Supaya konten berbeda-beda, tapi pesan
+            besarnya tetap nyambung.</p>
         </div>
 
-        <div class="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-left">
-          <div class="rounded-2xl border hairline bg-space-950/70 p-4 sm:p-5">
-            <p class="text-xs font-mono font-bold text-sunset-300 uppercase">🎯 Core Message</p>
-            <p class="mt-1.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">Supaya konten berbeda-beda, tapi pesan
-              besarnya tetap nyambung.</p>
-          </div>
+        <div class="rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 orange-card shadow-glow">
+          <p class="text-xs font-mono font-bold text-sunset-300 uppercase">📚 Angle Library</p>
+          <p class="mt-1.5 text-xs sm:text-sm text-zinc-200 leading-relaxed">Supaya tidak kembali ke fitur, promo,
+            diskon, dan “beli sekarang” terus-menerus.</p>
+        </div>
 
-          <div class="rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 shadow-glow">
-            <p class="text-xs font-mono font-bold text-sunset-300 uppercase">📚 Angle Library</p>
-            <p class="mt-1.5 text-xs sm:text-sm text-zinc-200 leading-relaxed">Supaya tidak kembali ke fitur, promo,
-              diskon, dan “beli sekarang” terus-menerus.</p>
-          </div>
-
-          <div class="rounded-2xl border hairline bg-space-950/70 p-4 sm:p-5">
-            <p class="text-xs font-mono font-bold text-sunset-300 uppercase">⚡ Prompt Execution</p>
-            <p class="mt-1.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">Supaya saat membuka AI, Anda datang
-              membawa konteks — bukan kepala kosong.</p>
-          </div>
+        <div class="rounded-2xl border hairline bg-space-950/70 p-4 sm:p-5 soft-card">
+          <p class="text-xs font-mono font-bold text-sunset-400 uppercase">⚡ Prompt Execution</p>
+          <p class="mt-1.5 text-xs sm:text-sm text-zinc-300 leading-relaxed">Supaya saat membuka AI, Anda datang membawa
+            konteks — bukan kepala kosong.</p>
         </div>
       </div>
     </section>
@@ -917,11 +1244,13 @@
       </div>
 
       <!-- Main High-Converting Offer Card -->
-      <div class="relative mt-8 rounded-3xl border-2 border-sunset-500/50 bg-gradient-to-b from-sunset-950/40 via-space-900/90 to-space-950 p-5 sm:p-7 shadow-[0_0_50px_rgba(255,107,53,0.2)] text-left">
+      <div
+        class="relative mt-8 rounded-3xl border-2 border-sunset-500/50 bg-gradient-to-b from-sunset-950/40 via-space-900/90 to-space-950 p-5 sm:p-7 shadow-[0_0_50px_rgba(255,107,53,0.2)] text-left">
         <!-- Floating Highlight Badge -->
         <div class="flex justify-center -mt-8 mb-5">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-sunset-500 via-amber-400 to-sunset-500 px-4 py-1.5 text-[10.5px] font-black uppercase tracking-wider text-space-950 shadow-lg shadow-sunset-500/30">
-            🔥 PENAWARAN SPESIAL · DISKON 51%
+          <span
+            class="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-sunset-500 via-amber-400 to-sunset-500 px-4 py-1.5 text-[10.5px] font-black uppercase tracking-wider text-space-950 shadow-lg shadow-sunset-500/30">
+            🔥 PENAWARAN SPESIAL · DISKON 49%
           </span>
         </div>
 
@@ -933,9 +1262,10 @@
         <!-- Price Display (Dominant Visual Focus & Exact Requested Sequence) -->
         <div class="mt-4 text-center">
           <!-- 1. Harga Normal -->
-          <div class="inline-flex items-baseline justify-center gap-2 px-3.5 py-1 rounded-full bg-black/40 border hairline mb-1">
+          <div
+            class="inline-flex items-baseline justify-center gap-2 px-3.5 py-1 rounded-full bg-black/40 border hairline mb-1">
             <span class="text-[10.5px] font-semibold text-zinc-400">Harga Normal:</span>
-            <span class="line-through text-zinc-500 text-xs font-bold">Rp299.000</span>
+            <span class="line-through text-zinc-500 text-xs font-bold">Rp249.000</span>
           </div>
 
           <!-- 2. Khusus 50 pembeli tercepat hari ini -->
@@ -943,9 +1273,10 @@
             Khusus 50 pembeli tercepat hari ini.
           </p>
 
-          <!-- 3. Nominal Rp 147.000* -->
-          <div class="mt-1 text-4xl sm:text-5xl font-black tracking-tight text-white flex items-center justify-center gap-1 drop-shadow-[0_0_25px_rgba(255,107,53,0.35)]">
-            <span class="text-sunset-400 font-extrabold">Rp</span>147.000<span class="text-sunset-400 font-bold">*</span>
+          <!-- 3. Nominal Rp 127.000* -->
+          <div
+            class="mt-1 text-4xl sm:text-5xl font-black tracking-tight text-white flex items-center justify-center gap-1 drop-shadow-[0_0_25px_rgba(255,107,53,0.35)]">
+            <span class="text-white font-extrabold">Rp</span>127.000<span class="text-sunset-400 font-bold">*</span>
           </div>
 
           <!-- 4. *Otomatis tidak berlaku jika kuota promo habis. -->
@@ -960,11 +1291,13 @@
         </div>
 
         <!-- Ticket-Style Voucher Box (Centered & Perfectly Balanced) -->
-        <div class="mt-4 rounded-2xl border border-dashed border-sunset-500/40 bg-sunset-500/10 p-3 flex items-center justify-center gap-2.5 shadow-inner">
+        <div
+          class="mt-4 rounded-2xl border border-dashed border-sunset-500/40 bg-sunset-500/10 p-3 flex items-center justify-center gap-2.5 shadow-inner">
           <span class="text-xs font-semibold text-zinc-300">Kode Promo:</span>
           <div class="inline-flex items-center gap-2 rounded-xl bg-black/60 border hairline px-3 py-1.5">
             <span class="font-mono text-xs sm:text-sm font-black text-amber-300 tracking-wider">MARKETFIRST</span>
-            <button type="button" id="copyVoucherBtn" title="Salin Kode Promo" aria-label="Salin Kode Promo" class="copy-btn text-sunset-300 hover:text-sunset-200 active:scale-90 transition pl-1.5 border-l hairline">
+            <button type="button" id="copyVoucherBtn" title="Salin Kode Promo" aria-label="Salin Kode Promo"
+              class="copy-btn text-sunset-300 hover:text-sunset-200 active:scale-90 transition pl-1.5 border-l hairline">
               <span class="text-xs sm:text-sm">📋</span>
             </button>
           </div>
@@ -972,43 +1305,56 @@
 
         <!-- Clean Deliverables List (High-Converting Value Stacking) -->
         <div class="my-6 space-y-3.5 text-left">
-          <p class="text-[11px] font-mono font-bold uppercase tracking-wider text-sunset-400">Semua yang Anda Dapatkan Hari Ini:</p>
+          <p class="text-[11px] font-mono font-bold uppercase tracking-wider text-sunset-400">Semua yang Anda Dapatkan
+            Hari Ini:</p>
 
           <div class="flex items-start gap-3">
-            <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <span
+              class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
               <p class="text-xs sm:text-sm font-bold text-white">9 Output Peta Strategi Konten Siap Pakai</p>
-              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Bukan sekadar ide generik, tapi kerangka utuh: alasan beli produk, pesan kunci, beragam angle promosi, arah hook, hingga susunan format konten.</p>
+              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Bukan sekadar ide generik, tapi kerangka
+                utuh: alasan beli produk, pesan kunci, beragam angle promosi, arah hook, hingga susunan format konten.
+              </p>
             </div>
           </div>
 
           <div class="flex items-start gap-3">
-            <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <span
+              class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
               <p class="text-xs sm:text-sm font-bold text-white">Master Prompt Brief ke AI &amp; Tim</p>
-              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Tinggal copy-paste brief ke ChatGPT, Claude, atau serahkan ke tim — AI langsung paham konteks produk Anda &amp; menghasilkan konten yang tepat sasaran.</p>
+              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Tinggal copy-paste brief ke ChatGPT, Claude,
+                atau serahkan ke tim — AI langsung paham konteks produk Anda &amp; menghasilkan konten yang tepat
+                sasaran.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-3">
-            <span class="flex h-5 w-5 items-center justify-center rounded-full bg-amber-400/20 text-amber-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <span
+              class="flex h-5 w-5 items-center justify-center rounded-full bg-amber-400/20 text-amber-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
-              <p class="text-xs sm:text-sm font-bold text-amber-300">GRATIS 3 Bonus Akselerasi (Nilai <span class="line-through opacity-85">Rp497.000</span>)</p>
-              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Termasuk Workflow Architecture, 30-Day Content Calendar Template, serta Content Audit Checklist.</p>
+              <p class="text-xs sm:text-sm font-bold text-amber-300">3 E-Book Ekosistem CSP v.4 (
+                <span class="line-through opacity-85">Rp247.000</span>)
+              </p>
+              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Termasuk Execution Architecture Blueprint,
+                30-Day Content Calendar Template, serta Ready-to-Post Content Checklist.</p>
             </div>
           </div>
 
           <div class="flex items-start gap-3">
-            <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <span
+              class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div>
               <p class="text-xs sm:text-sm font-bold text-white">Akses Penuh &amp; Bebas Pakai Berulang</p>
-              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Pakai sepuasnya untuk produk lama, varian baru, atau bisnis berikutnya tanpa biaya langganan.</p>
+              <p class="text-[11.5px] text-zinc-400 mt-0.5 leading-relaxed">Pakai sepuasnya untuk produk lama, varian
+                baru, atau bisnis berikutnya tanpa biaya langganan.</p>
             </div>
           </div>
         </div>
 
         <!-- High-Impact Primary CTA Button -->
-        <a href="#final-cta"
+        <a href="https://lynk.id/musyaffaas/k8xjzj8g9mz6/checkout"
           class="cta-shine mt-2 flex items-center justify-center gap-1.5 w-full rounded-2xl bg-gradient-to-r from-sunset-500 via-sunset-400 to-amber-400 px-6 py-4 text-center shadow-[0_0_30px_rgba(255,107,53,0.4)] hover:brightness-110 active:scale-[0.98] transition">
           <span class="text-base sm:text-lg font-black text-white drop-shadow-sm">
             Dapatkan Promo Sekarang
@@ -1016,7 +1362,8 @@
         </a>
 
         <!-- Trust Signals Bar (Strict Single Line) -->
-        <div class="mt-4 pt-3 border-t hairline flex items-center justify-center gap-1.5 sm:gap-3 text-[9px] sm:text-[11px] font-semibold text-zinc-400 whitespace-nowrap">
+        <div
+          class="mt-4 pt-3 border-t hairline flex items-center justify-center gap-1.5 sm:gap-3 text-[9px] sm:text-[11px] font-semibold text-zinc-400 whitespace-nowrap">
           <span class="inline-flex items-center gap-0.5">🔒 Checkout Aman</span>
           <span class="text-zinc-600">•</span>
           <span class="inline-flex items-center gap-0.5">⚡ Akses Instan</span>
@@ -1026,43 +1373,53 @@
 
         <!-- Fineprint (Strict Single Line) -->
         <p class="mt-2.5 text-center text-[9.5px] sm:text-[10.5px] text-zinc-500 whitespace-nowrap">
-          Masukkan kode promo saat checkout untuk menikmati potongan 51%.
+          Masukkan kode promo saat checkout untuk menikmati potongan 49%.
         </p>
     </section>
 
     <!-- EXCLUSIVE BONUS SECTION -->
     <section class="mt-20 fade-up" id="bonus">
       <div class="text-center">
-        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bonus Eksklusif Ekosistem</p>
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Bonus Eksklusif</p>
         <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          3 Bonus Tambahan Gratis <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Khusus untuk Anda</span>
+          3 E-Book Gratis Untuk Anda<br class="hidden sm:inline" />
+          <span class="text-sunset-400">Senilai Rp 247.000,-</span>
         </h2>
         <p class="mt-3 text-xs sm:text-sm text-zinc-400 max-w-sm mx-auto">
-          3 Bonus Ekosistem senilai <span class="line-through text-zinc-500 font-mono">Rp497.000</span> ini otomatis hangus dalam 24 jam kedepan.
+          3 Bonus ini otomatis aktif dan berlaku selama 24 jam sejak pertama kali Anda membuka halaman ini.
         </p>
       </div>
 
-      <!-- 3D EBOOK BUNDLE VISUAL DISPLAY CONTAINER (Above Bonus Cards) -->
-      <div class="mt-6 overflow-hidden rounded-2xl border orange-line bg-space-950/80 shadow-glow">
-        <img src="csp-bonus-ebooks.jpg" alt="3D Digital eBook Bonus Bundle Mockup" class="w-full h-auto block" loading="lazy" />
-      </div>
-      <p class="mt-2.5 text-center text-xs text-zinc-300 font-medium max-w-lg mx-auto">
-        Dapatkan ketiga e-Book Blueprint &amp; Framework di atas secara <strong class="text-sunset-300">GRATIS 100%</strong> khusus pemesanan hari ini.
-      </p>
+      <!-- 3D EBOOK BUNDLE VISUAL DISPLAY CONTAINER (With Straddling Overlay Text) -->
+      <div class="relative mt-6 rounded-2xl border orange-line bg-space-950/80 shadow-glow">
+        <img src="csp-bonus-ebooks.jpg" alt="3D Digital eBook Bonus Bundle Mockup"
+          class="w-full h-auto block rounded-2xl" loading="lazy" />
 
-      <div class="mobile-copy-rail mt-8 space-y-3.5">
+        <!-- Straddling Overlay Pill (Middle of Bottom Border Line) -->
+        <div
+          class="absolute bottom-0 translate-y-1/2 inset-x-3 sm:inset-x-8 z-20 rounded-xl bg-space-950/90 backdrop-blur-md border orange-line px-4 py-2.5 text-center shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+          <p class="text-[11px] sm:text-xs text-zinc-200 font-medium leading-relaxed">
+            Dapatkan ketiga e-Book Blueprint &amp; Framework di atas secara <strong class="text-sunset-300">GRATIS
+              100%</strong> selama batas waktu akses promo Anda masih aktif.
+          </p>
+        </div>
+      </div>
+
+      <div class="mobile-copy-rail mt-10 sm:mt-12 space-y-3.5">
         <!-- Bonus 1 -->
         <div class="rounded-2xl border hairline bg-space-950/70 p-4 sm:p-5 soft-card">
           <div class="flex items-start gap-3">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <span
+              class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div class="flex-1">
               <div class="flex items-center justify-between gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-white">Framework Workflow &amp; Execution Architecture</h3>
-                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp199.000</span>
+                <h3 class="text-xs sm:text-sm font-bold text-white">The Content Workflow &amp; Execution Architecture
+                  Blueprint</h3>
+                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp99.000</span>
               </div>
               <p class="text-[11.5px] text-zinc-400 mt-1 leading-relaxed">
-                Panduan mendalam yang membedah alur kerja, definisi, dan detail tiap fase strategi — membuat Anda paham penuh cara berpikir di balik sistem ini.
+                Panduan mendalam yang membedah alur kerja, definisi, dan detail tiap fase strategi — membuat Anda paham
+                penuh cara berpikir di balik sistem ini.
               </p>
             </div>
           </div>
@@ -1071,14 +1428,16 @@
         <!-- Bonus 2 -->
         <div class="rounded-2xl border hairline bg-space-950/70 p-4 sm:p-5 soft-card">
           <div class="flex items-start gap-3">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <span
+              class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div class="flex-1">
               <div class="flex items-center justify-between gap-2">
                 <h3 class="text-xs sm:text-sm font-bold text-white">30-Day Integrated Content Calendar Template</h3>
-                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp149.000</span>
+                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp99.000</span>
               </div>
               <p class="text-[11.5px] text-zinc-400 mt-1 leading-relaxed">
-                Template kalender 30 hari yang sudah terintegrasi langsung dengan framework CSP — tinggal pakai tanpa pusing menyusun urutan posting dari nol.
+                Template kalender 30 hari yang sudah terintegrasi langsung dengan framework CSP — tinggal pakai tanpa
+                pusing menyusun urutan posting dari nol.
               </p>
             </div>
           </div>
@@ -1087,37 +1446,75 @@
         <!-- Bonus 3 -->
         <div class="rounded-2xl border hairline bg-space-950/70 p-4 sm:p-5 soft-card">
           <div class="flex items-start gap-3">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
+            <span
+              class="flex h-6 w-6 items-center justify-center rounded-full bg-sunset-500/20 text-sunset-300 font-black text-xs flex-shrink-0 mt-0.5">✓</span>
             <div class="flex-1">
               <div class="flex items-center justify-between gap-2">
-                <h3 class="text-xs sm:text-sm font-bold text-white">High-Converting Content Audit Checklist</h3>
-                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp149.000</span>
+                <h3 class="text-xs sm:text-sm font-bold text-white">Ready-to-Post Content Checklist</h3>
+                <span class="text-[10px] font-mono font-bold text-rose-400 line-through">Rp49.000</span>
               </div>
               <p class="text-[11.5px] text-zinc-400 mt-1 leading-relaxed">
-                Checklist ringkas untuk mengecek apakah konten Anda sudah memenuhi syarat psikologi jualan sebelum ditekan tombol 'Post'.
+                Checklist ringkas untuk mengecek apakah konten Anda sudah memenuhi syarat psikologi jualan sebelum
+                ditekan tombol 'Post'.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Soft & Highlighted 24h Countdown Box (Relocated Above Total Box) -->
-        <div class="mt-5 rounded-2xl border orange-line bg-sunset-500/10 p-3.5 text-center flex flex-col items-center justify-center">
-          <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-300">⏳ Berlaku Khusus Transaksi Hari Ini:</span>
-          <div class="mt-1 font-mono text-2xl sm:text-3xl font-black text-sunset-300 tracking-widest">
-            <span id="bonusTimer">23:59:59</span>
+        <!-- Freestanding High-Urgency 24h Countdown Timer (With Clear JAM / MENIT / DETIK Labels) -->
+        <div class="text-center flex flex-col items-center justify-center"
+          style="margin-top: 3.25rem !important; margin-bottom: 2.25rem !important;">
+          <span class="text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-amber-300">⏳ Sisa Waktu Klaim Bonus
+            24 Jam Anda:</span>
+
+          <!-- Countdown Digits + Context Labels -->
+          <div
+            class="mt-3 flex items-center justify-center gap-2 sm:gap-4 font-mono text-sunset-400 drop-shadow-[0_0_35px_rgba(255,107,53,0.9)]">
+            <!-- Jam -->
+            <div class="flex flex-col items-center min-w-[50px] sm:min-w-[70px]">
+              <span class="text-4xl sm:text-6xl md:text-7xl font-black text-sunset-400" id="timerHours">23</span>
+              <span
+                class="text-[9px] sm:text-[11px] font-sans font-bold uppercase tracking-wider text-zinc-400 mt-1">JAM</span>
+            </div>
+            <span class="text-3xl sm:text-5xl font-black text-sunset-500/80 -mt-4">:</span>
+            <!-- Menit -->
+            <div class="flex flex-col items-center min-w-[50px] sm:min-w-[70px]">
+              <span class="text-4xl sm:text-6xl md:text-7xl font-black text-sunset-400" id="timerMinutes">59</span>
+              <span
+                class="text-[9px] sm:text-[11px] font-sans font-bold uppercase tracking-wider text-zinc-400 mt-1">MENIT</span>
+            </div>
+            <span class="text-3xl sm:text-5xl font-black text-sunset-500/80 -mt-4">:</span>
+            <!-- Detik -->
+            <div class="flex flex-col items-center min-w-[50px] sm:min-w-[70px]">
+              <span class="text-4xl sm:text-6xl md:text-7xl font-black text-amber-400" id="timerSeconds">59</span>
+              <span
+                class="text-[9px] sm:text-[11px] font-sans font-bold uppercase tracking-wider text-amber-400/90 mt-1">DETIK</span>
+            </div>
           </div>
         </div>
 
-        <!-- Bonus Total Summary Box -->
-        <div class="mt-3 rounded-2xl border orange-line bg-sunset-500/10 p-4 text-center">
+        <!-- Bonus Total Summary Box (Exact Matched Card Sizing Across Viewports) -->
+        <div
+          class="rounded-2xl border orange-line bg-sunset-500/10 p-4 sm:p-5 text-center orange-card shadow-glow mt-6">
           <p class="text-xs sm:text-sm font-bold text-zinc-200">
-            Total Nilai Bonus: <span class="line-through text-zinc-400 font-mono">Rp497.000</span> → <span class="text-sunset-300 font-black text-sm sm:text-base">GRATIS 100%</span>
+            Total Nilai Bonus: <span class="line-through text-zinc-400 font-mono">Rp247.000</span> → <span
+              class="text-sunset-300 font-black text-sm sm:text-base">GRATIS 100%</span>
           </p>
+        </div>
+
+        <!-- High-Impact Direct Checkout CTA After Bonus & Timer -->
+        <div class="mt-6 text-center">
+          <a href="https://lynk.id/musyaffaas/k8xjzj8g9mz6/checkout"
+            class="cta-shine flex items-center justify-center gap-1.5 w-full rounded-2xl bg-gradient-to-r from-sunset-500 via-sunset-400 to-amber-400 px-6 py-4 text-center shadow-[0_0_30px_rgba(255,107,53,0.4)] hover:brightness-110 active:scale-[0.98] transition">
+            <span class="text-base sm:text-lg font-black text-white drop-shadow-sm">
+              Klaim Promo &amp; Bonus Gratis Sekarang
+            </span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- FAQ SECTION (OBJECTION KILLERS) -->
     <section class="mt-20 fade-up" id="faq">
       <div class="text-center">
         <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">FAQ</p>
@@ -1125,89 +1522,113 @@
       </div>
 
       <div class="mobile-copy-rail mt-7 space-y-3">
-        <!-- Q1 -->
+        <!-- Q1 (Bentuk Produk) -->
         <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left" open>
-          <summary class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Ini generator caption otomatis atau alat strategi konten?</span>
+          <summary
+            class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Sebetulnya apa format dan bentuk Content Strategy Pro v.4 ini?</span>
             <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
           </summary>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Bukan sekadar generator caption generik. Content Strategy Pro v.4 membedah arah strategi konten produk Anda secara utuh. Setelah narasi &amp; anglenya jelas, hasilnya tinggal dimasukkan ke AI (ChatGPT/Claude) untuk mengeksekusi caption, script video, hingga format konten lainnya.
+            Content Strategy Pro v.4 adalah <strong class="text-white">tool aplikasi web</strong> yang bisa Anda buka
+            langsung di browser (HP maupun laptop) tanpa perlu install software apa pun. Anda cukup menjawab pertanyaan
+            dasar seputar produk Anda, lalu sistem akan otomatis menyusun 9 pilar peta strategi konten lengkap beserta
+            master prompt yang siap Anda copy-paste ke AI.
           </p>
         </details>
 
-        <!-- Q2 (Akses) -->
+        <!-- Q2 (Perlu AI Berbayar?) -->
         <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left">
-          <summary class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Bagaimana cara akses produknya setelah pembayaran?</span>
+          <summary
+            class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Apakah saya harus langganan ChatGPT Plus atau AI berbayar?</span>
             <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
           </summary>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Akses langsung dikirim secara instan ke email &amp; WhatsApp Anda. Anda bisa langsung menggunakannya di browser HP maupun laptop kapan saja tanpa instalasi rumit.
+            Sama sekali <strong class="text-amber-300">TIDAK PERLU</strong>. Master prompt dan hasil pemetaan strategi
+            CSP v.4 bekerja maksimal di ChatGPT versi gratis (GPT-4o mini / GPT-4o free tier), Claude, Google Gemini,
+            maupun AI lainnya. Anda tidak diwajibkan membayar langganan AI bulanan apa pun.
           </p>
         </details>
 
-        <!-- Q3 (Multi Produk) -->
+        <!-- Q3 (Langkah Pertama Setelah Membeli) -->
         <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left">
-          <summary class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Apakah bisa dipakai untuk banyak produk &amp; varian bisnis?</span>
+          <summary
+            class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Setelah membeli, langkah pertama saya apa?</span>
             <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
           </summary>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Ya, 100% bebas! Sekali bayar, Anda bisa menggunakannya berulang kali untuk menyusun strategi konten produk lama, varian baru, maupun bisnis berikutnya tanpa biaya langganan.
+            Sangat praktis dan instan. Begitu pembayaran berhasil di Lynk.id, halaman akses web tool CSP v.4 dan 3
+            e-book bonus langsung terbuka di layar Anda (salinannya juga otomatis dikirim ke email Anda). Anda tinggal
+            buka link tool di browser, isi fakta produk Anda selama 3–5 menit, dan strategi konten siap langsung
+            digunakan.
           </p>
         </details>
 
-        <!-- Q4 (Marketing Skill) -->
+        <!-- Q4 (Multi Produk & Jasa) -->
         <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left">
-          <summary class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+          <summary
+            class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Apakah bisa dipakai untuk banyak produk, jasa, atau varian bisnis?</span>
+            <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
+            Ya, 100% bebas! Cukup sekali bayar, Anda bisa menggunakan tool ini berulang kali tanpa batasan untuk produk
+            fisik (fashion, kuliner, herbal, elektronik), produk digital (e-book, e-course), varian baru, maupun layanan
+            jasa tanpa biaya langganan.
+          </p>
+        </details>
+
+        <!-- Q5 (Marketing Skill) -->
+        <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left">
+          <summary
+            class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
             <span>Apakah harus jago marketing untuk menggunakannya?</span>
             <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
           </summary>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Tidak perlu. Anda cukup menjawab pertanyaan seputar fakta produk Anda sendiri. Seluruh pemetaan strategi konten, penentuan angle, hingga arah hook dikerjakan oleh sistem.
+            Tidak perlu. Anda hanya perlu memahami produk yang Anda jual sendiri. Seluruh perumusan buying situation,
+            problem-desire map, penentuan angle jualan, hingga arah hook dikerjakan secara otomatis oleh sistem CSP v.4.
           </p>
         </details>
 
-        <!-- Q5 (Product Type) -->
+        <!-- Q6 (Kode Promo & Klaim) -->
         <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left">
-          <summary class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Bisa dipakai untuk produk fisik, digital, atau jasa?</span>
+          <summary
+            class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
+            <span>Bagaimana cara klaim diskon 49% &amp; 3 Bonus Gratis?</span>
             <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
           </summary>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Sangat bisa. Framework strategi konten ini berlaku efektif untuk produk fisik (fashion, kuliner, herbal), produk digital (e-book, e-course), maupun layanan jasa.
-          </p>
-        </details>
-
-        <!-- Q6 (Kode Promo) -->
-        <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left">
-          <summary class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Bagaimana cara klaim diskon 51% &amp; 3 Bonus Gratis?</span>
-            <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Cukup masukkan kode promo <strong class="text-sunset-300">MARKETFIRST</strong> di halaman checkout. Harga akan otomatis terpotong dari Rp299.000 menjadi <strong class="text-amber-300">Rp147.000</strong> dan 3 Bonus Ekosistem langsung aktif.
+            Cukup masukkan kode promo <strong class="text-sunset-300">MARKETFIRST</strong> di halaman checkout Lynk.id.
+            Harga akan otomatis terpotong dari Rp249.000 menjadi <strong class="text-amber-300">Rp127.000</strong> dan 3
+            E-Book Bonus Ekosistem langsung aktif untuk Anda akses.
           </p>
         </details>
       </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section class="mt-20 mb-8 text-center fade-up" id="final-cta">
-      <div class="orange-card rounded-3xl p-8 sm:p-10 shadow-glow">
-        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-300">Pilihan Ada Di Tangan Anda</p>
-        <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          Produk Bagus Tidak Akan Menjual Dirinya Sendiri. <br class="hidden sm:inline" />
-          <span class="text-sunset-400">Saatnya Buat Pembeli Tahu Kenapa Mereka Harus Order Hari Ini.</span>
+    <!-- FINAL CTA SECTION (GROUNDED & CONFIDENT CORE PROMISE) -->
+    <section class="mt-20 mb-12 text-center fade-up" id="final-cta">
+      <div class="orange-card rounded-3xl p-8 sm:p-12 shadow-glow">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-300">Keputusan Ada di Tangan Anda</p>
+
+        <h2 class="mt-4 text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+          <span class="block">Besok Anda Bisa Kembali Menatap Halaman Kosong...</span>
+          <span class="block text-sunset-400" style="margin-top: 1.25rem !important;">Atau Mulai Ngonten dengan Peta
+            Strategi dan Arah Pesan yang Jelas.</span>
         </h2>
-        <p class="mx-auto mt-4 max-w-xl text-xs sm:text-sm leading-relaxed text-zinc-300">
-          Anda bisa tetap pusing memikirkan ide konten dari halaman kosong tiap minggu... Atau kunci peta strategi konten produk Anda sekarang juga sebelum kuota promo 51% &amp; 3 bonus gratis ini habis.
+
+        <p class="mx-auto mt-6 sm:mt-8 max-w-2xl text-xs sm:text-sm leading-relaxed text-zinc-300">
+          Daripada setiap minggu membuang waktu menebak-nebak angle promosi dari nol, miliki pegangan strategis produk
+          Anda sekarang selagi penawaran diskon 49% dan 3 e-book bonus eksklusif masih aktif.
         </p>
-        <div class="mt-7">
-          <a href="#offer"
+
+        <div class="mt-8 sm:mt-10">
+          <a href="https://lynk.id/musyaffaas/k8xjzj8g9mz6/checkout"
             class="cta-shine inline-flex items-center justify-center gap-2 rounded-xl bg-sunset-500 px-8 py-4 text-base sm:text-lg font-black text-white shadow-glow hover:bg-sunset-400 transition">
-            <span>Dapatkan Diskon 51% &amp; 3 Bonus Gratis →</span>
+            <span>Amankan Akses CSP v.4 Sekarang</span>
           </a>
         </div>
       </div>
@@ -1215,9 +1636,9 @@
 
     <!-- FOOTER -->
     <footer class="border-t hairline pt-8 pb-4 text-center text-xs leading-relaxed text-zinc-600">
-      <p class="font-bold text-zinc-400">Content Strategy Pro v4 · Strategy before execution</p>
-      <p class="mt-1 max-w-lg mx-auto">Membantu menyusun arah pesan promosi dan strategi konten. Hasil bisnis tetap dipengaruhi
-        kualitas produk, penawaran, eksekusi, distribusi, dan kondisi usaha.</p>
+      <p class="font-bold text-zinc-400">Content Strategy Pro v.4 · High-Conversion Strategy Engine</p>
+      <p class="mt-1 max-w-lg mx-auto">Membantu membedah arsitektur strategi &amp; narasi promosi produk. Hasil bisnis
+        tetap dipengaruhi kualitas produk, penawaran, eksekusi, distribusi, dan kondisi usaha.</p>
     </footer>
   </main>
 
@@ -1255,9 +1676,48 @@
         });
       }
 
+      // Real ChatGPT UI Live Auto-Stream Animator (Snappy Transition + Long Freeze to Read)
+      let activeStreamStep = 1;
+
+      function transitionToCspStep(nextStep) {
+        const currentEl = document.getElementById('aiStreamStep' + activeStreamStep);
+        const nextEl = document.getElementById('aiStreamStep' + nextStep);
+
+        if (!currentEl || !nextEl) return;
+
+        // 1. Fast smooth fade out (150ms)
+        currentEl.style.opacity = '0';
+        currentEl.style.transform = 'translateY(-3px)';
+
+        setTimeout(() => {
+          currentEl.classList.add('hidden');
+
+          // 2. Reveal next step & quick smooth glide in
+          nextEl.classList.remove('hidden');
+          nextEl.style.opacity = '0';
+          nextEl.style.transform = 'translateY(4px)';
+
+          // Force reflow
+          void nextEl.offsetWidth;
+
+          nextEl.style.opacity = '1';
+          nextEl.style.transform = 'translateY(0)';
+          activeStreamStep = nextStep;
+        }, 150);
+      }
+
+      setInterval(() => {
+        const nextStep = (activeStreamStep % 7) + 1;
+        transitionToCspStep(nextStep);
+      }, 6500);
+
       // 24-Hour Bonus Countdown Timer (Persisted per visitor session)
       const timerEl = document.getElementById('bonusTimer');
-      if (timerEl) {
+      const hEl = document.getElementById('timerHours');
+      const mEl = document.getElementById('timerMinutes');
+      const sEl = document.getElementById('timerSeconds');
+
+      if (timerEl || hEl) {
         let endTime = localStorage.getItem('csp_bonus_end');
         if (!endTime || isNaN(endTime)) {
           endTime = Date.now() + (24 * 60 * 60 * 1000);
@@ -1269,7 +1729,10 @@
           const h = String(Math.floor(diff / 3600)).padStart(2, '0');
           const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
           const s = String(diff % 60).padStart(2, '0');
-          timerEl.textContent = `${h}:${m}:${s}`;
+          if (hEl) hEl.textContent = h;
+          if (mEl) mEl.textContent = m;
+          if (sEl) sEl.textContent = s;
+          if (timerEl) timerEl.textContent = `${h}:${m}:${s}`;
           if (diff <= 0) clearInterval(timerInterval);
         }
         updateTimer();
