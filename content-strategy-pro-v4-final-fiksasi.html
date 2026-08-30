@@ -210,15 +210,6 @@
       font-weight: 900;
     }
 
-    .copy-btn {
-      transition: all .2s ease;
-    }
-
-    .copy-btn:active {
-      transform: scale(.97);
-    }
-
-
     /* Container: Normal 768px on Tablet & Desktop */
     .mobile-rail {
       width: 100%;
@@ -281,28 +272,177 @@
       }
     }
 
-    /* Vertical Scroll-Up Testimonial Marquee */
-    @keyframes scrollUp {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-50%); }
+    /* Interactive Testimonial Carousel */
+    .testimoni-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 768px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .testimoni-scroll-track {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5rem;
-      animation: scrollUp 65s linear infinite;
-    }
-
-    .testimoni-scroll-track:hover {
-      animation-play-state: paused;
-    }
-
-    .testimoni-scroll-wrapper {
+    .testimoni-carousel-viewport {
       overflow: hidden;
-      max-height: 480px;
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+      padding: 1rem .25rem 1.25rem;
+      touch-action: pan-y;
+      cursor: grab;
+      outline: none;
+    }
+
+    .testimoni-carousel-viewport:focus-visible {
+      outline: 2px solid rgba(255, 127, 77, .8);
+      outline-offset: 3px;
+      border-radius: 1rem;
+    }
+
+    .testimoni-carousel-viewport.is-dragging {
+      cursor: grabbing;
+    }
+
+    .testimoni-carousel-track {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform .48s cubic-bezier(.16, 1, .3, 1);
+      will-change: transform;
+    }
+
+    .testimoni-card {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 calc((100% - 2rem) / 3);
+      padding: .65rem;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 1rem;
+      background: rgba(13, 17, 26, .82);
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      opacity: .68;
+      filter: saturate(.85) brightness(.9);
+      transform: scale(.82);
+      transform-origin: center center;
+      cursor: pointer;
+      transition: opacity .48s ease, filter .48s ease, transform .48s cubic-bezier(.16, 1, .3, 1), border-color .48s ease, box-shadow .48s ease;
+    }
+
+    .testimoni-card:hover,
+    .testimoni-card:focus-visible {
+      border-color: rgba(255, 127, 77, .55);
+      outline: none;
+    }
+
+    .testimoni-card.is-active {
+      z-index: 2;
+      border-color: rgba(255, 107, 53, .5);
+      opacity: 1;
+      filter: none;
+      transform: scale(1);
+      box-shadow: 0 16px 40px -18px rgba(255, 107, 53, .5);
+    }
+
+    .testimoni-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: .7rem;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .testimoni-carousel-button {
+      position: absolute;
+      top: 50%;
+      z-index: 4;
+      display: grid;
+      width: 2.5rem;
+      height: 2.5rem;
+      place-items: center;
+      border: 1px solid rgba(255, 127, 77, .42);
+      border-radius: 999px;
+      background: rgba(7, 9, 14, .9);
+      color: #ffb08f;
+      font-size: 1.5rem;
+      line-height: 1;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .testimoni-carousel-button:hover,
+    .testimoni-carousel-button:focus-visible {
+      background: #ff6b35;
+      color: #fff;
+      outline: none;
+    }
+
+    .testimoni-carousel-button:active {
+      transform: translateY(-50%) scale(.94);
+    }
+
+    .testimoni-carousel-button[data-carousel-prev] {
+      left: -.75rem;
+    }
+
+    .testimoni-carousel-button[data-carousel-next] {
+      right: -.75rem;
+    }
+
+    .testimoni-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: .45rem;
+    }
+
+    .testimoni-carousel-dot {
+      width: .45rem;
+      height: .45rem;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .24);
+      cursor: pointer;
+      transition: width .25s ease, background .25s ease;
+    }
+
+    .testimoni-carousel-dot.is-active {
+      width: 1.25rem;
+      background: #ff7f4d;
+    }
+
+    @media (max-width: 640px) {
+      .testimoni-carousel {
+        width: 100vw;
+        max-width: none;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+      }
+
+      .testimoni-carousel-viewport {
+        padding-right: .25rem;
+        padding-left: .25rem;
+      }
+
+      .testimoni-card {
+        flex-basis: 70%;
+        opacity: .8;
+        filter: saturate(.95) brightness(.95);
+        transform: scale(.88);
+      }
+
+      .testimoni-carousel-button {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .testimoni-carousel-track,
+      .testimoni-card,
+      .testimoni-carousel-dot,
+      .testimoni-carousel-button {
+        transition: none;
+      }
     }
 
     /* High-Converting CTA Button "Minta Diklik" Pulse & Glow Animation */
@@ -385,14 +525,14 @@
           </span>
           <span>
             <strong>Content Strategy Pro v.4</strong>
-            <small>High-Conversion Strategy Engine</small>
+            <small>AI-Powered Content Strategy Tools</small>
           </span>
         </div>
       </div>
 
       <!-- Eyebrow -->
       <p class="mt-8 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-sunset-400">
-        Berhenti Ngonten Tanpa Arah yang Jelas
+        Stop Asal Bikin Konten Promosi!
       </p>
 
       <!-- Main Headline -->
@@ -415,7 +555,7 @@
           <div class="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-400">
             <span class="text-rose-400 font-black flex-shrink-0 mt-0.5">✕</span>
             <p><strong class="text-zinc-300">Tanpa arah:</strong> Idenya mentok — akhirnya muter di fitur, diskon,
-              dan testimoni yang itu-itu saja.</p>
+              dan testimoni yang gitu-gitu aja.</p>
           </div>
 
           <div class="border-t hairline"></div>
@@ -439,12 +579,14 @@
 
       <!-- Hero Fineprint -->
       <p class="mt-4 text-xs text-zinc-500">
-        Bukan janji order instan. Ini panduan strategis agar konten Anda punya arah dan alasan beli yang kuat.
+        Bukan janji order instan. Ini panduan strategis agar konten Anda punya arah dan alasan yang kuat untuk dimiliki
+        pembeli.
       </p>
     </section>
 
     <!-- RECOGNITION SECTION -->
-    <section class="mt-20 fade-up">
+    <section class="mt-20 fade-up pt-10 px-6 sm:px-10 rounded-3xl"
+      style="background: linear-gradient(to bottom, rgba(255,255,255,0.09) 0%, transparent 60%);">
       <div class="text-center">
         <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Kejadian yang Sering Berulang</p>
         <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
@@ -454,7 +596,7 @@
         <!-- Teks Sub-judul (Teks Dulu) -->
         <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
           Masalahnya sering terasa kecil saat satu per satu. Tapi kalau berulang tiap hari, promosi jadi capek dan
-          effort ngonten tak membuahkan hasil.
+          effort ngonten minim membuahkan hasil.
         </p>
 
         <!-- Single Pain Visual Image (Baru Gambar) -->
@@ -553,7 +695,7 @@
 
         <p class="text-xs font-bold uppercase tracking-[0.22em] text-sunset-400">Content Strategy Pro v.4</p>
         <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
-          Anda Ceritakan Produknya. <br class="hidden sm:inline" />
+          Anda Ceritakan Produknya. <br class="" />
           <span class="text-sunset-400">Tool yang Menyusun Arah Kontennya.</span>
         </h2>
         <p class="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl mx-auto">
@@ -572,7 +714,7 @@
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-left">
         <div class="rounded-2xl border hairline bg-space-950/70 p-5 soft-card">
           <div class="plain-term">01 • Informasi Produk</div>
-          <h3 class="mt-2 font-bold text-white text-base">Cukup jawab hal-hal dasar seputar produk Anda</h3>
+          <h3 class="mt-2 font-bold text-white text-base">Cukup informasikan hal-hal dasar seputar produk Anda</h3>
           <p class="mt-1.5 text-xs sm:text-sm text-zinc-400 leading-relaxed">Tidak perlu riset rumit atau istilah
             marketing. Cukup masukkan nama produk, fungsi utama, dan keunggulan yang ditawarkan.</p>
         </div>
@@ -695,139 +837,82 @@
         </p>
       </div>
 
-      <!-- Vertical Scroll-Up Testimonial Screenshots -->
-      <div class="mt-8 testimoni-scroll-wrapper mx-auto" style="max-width: 410px;">
-        <div class="testimoni-scroll-track">
+      <!-- Interactive Testimonial Screenshots -->
+      <div class="mt-8 testimoni-carousel" data-testimonial-carousel>
+        <button type="button" class="testimoni-carousel-button" data-carousel-prev aria-label="Testimoni sebelumnya">
+          &larr;
+        </button>
+        <div class="testimoni-carousel-viewport" data-carousel-viewport tabindex="0" role="region"
+          aria-label="Carousel tangkapan layar testimoni">
+          <div class="testimoni-carousel-track" data-carousel-track>
+            <button type="button" class="testimoni-card is-active" data-carousel-card="0"
+              aria-label="Lihat testimoni Nadia Azzahra, 1 dari 7" aria-current="true">
+              <div class="text-center mb-2.5">
+                <p class="text-sm font-bold text-white">Nadia Azzahra</p>
+                <p class="text-[11px] text-zinc-400">Seller Fashion Hijab</p>
+              </div>
+              <img src="testimoni/1.png" alt="Testimoni Nadia Azzahra - Seller Fashion Hijab" loading="eager" />
+            </button>
 
-          <!-- Testimoni 1: Nadia Azzahra -->
-          <div>
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Nadia Azzahra</p>
-              <p class="text-[11px] text-zinc-400">Seller Fashion Hijab</p>
-            </div>
-            <img src="testimoni/1.png" alt="Testimoni Nadia Azzahra - Seller Fashion Hijab" class="w-full h-auto block rounded-xl" loading="lazy" />
+            <button type="button" class="testimoni-card" data-carousel-card="1"
+              aria-label="Lihat testimoni Bagas Wicaksono, 2 dari 7">
+              <div class="text-center mb-2.5">
+                <p class="text-sm font-bold text-white">Bagas Wicaksono</p>
+                <p class="text-[11px] text-zinc-400">SMM Agency</p>
+              </div>
+              <img src="testimoni/2.png" alt="Testimoni Bagas Wicaksono - SMM Agency" loading="eager" />
+            </button>
+
+            <button type="button" class="testimoni-card" data-carousel-card="2"
+              aria-label="Lihat testimoni Bu Siti Rahayu, 3 dari 7">
+              <div class="text-center mb-2.5">
+                <p class="text-sm font-bold text-white">Bu Siti Rahayu</p>
+                <p class="text-[11px] text-zinc-400">Owner Katering Rumahan</p>
+              </div>
+              <img src="testimoni/3.png" alt="Testimoni Bu Siti Rahayu - Owner Katering Rumahan" loading="eager" />
+            </button>
+
+            <button type="button" class="testimoni-card" data-carousel-card="3"
+              aria-label="Lihat testimoni Fikri Ramadhan, 4 dari 7">
+              <div class="text-center mb-2.5">
+                <p class="text-sm font-bold text-white">Fikri Ramadhan</p>
+                <p class="text-[11px] text-zinc-400">Affiliate Marketer</p>
+              </div>
+              <img src="testimoni/4.png" alt="Testimoni Fikri Ramadhan - Affiliate Marketer" loading="eager" />
+            </button>
+
+            <button type="button" class="testimoni-card" data-carousel-card="4"
+              aria-label="Lihat testimoni Toni Setiawan, 5 dari 7">
+              <div class="text-center mb-2.5">
+                <p class="text-sm font-bold text-white">Toni Setiawan</p>
+                <p class="text-[11px] text-zinc-400">Jasa Desain Freelance</p>
+              </div>
+              <img src="testimoni/5.png" alt="Testimoni Toni Setiawan - Jasa Desain Freelance" loading="eager" />
+            </button>
+
+            <button type="button" class="testimoni-card" data-carousel-card="5"
+              aria-label="Lihat testimoni Dian Puspita, 6 dari 7">
+              <div class="text-center mb-2.5">
+                <p class="text-sm font-bold text-white">Dian Puspita</p>
+                <p class="text-[11px] text-zinc-400">Kreator Produk Digital</p>
+              </div>
+              <img src="testimoni/6.png" alt="Testimoni Dian Puspita - Kreator Produk Digital" loading="eager" />
+            </button>
+
+            <button type="button" class="testimoni-card" data-carousel-card="6"
+              aria-label="Lihat testimoni Hanif Pratama, 7 dari 7">
+              <div class="text-center mb-2.5">
+                <p class="text-sm font-bold text-white">Hanif Pratama</p>
+                <p class="text-[11px] text-zinc-400">Dropshipper Barang Unik</p>
+              </div>
+              <img src="testimoni/7.png" alt="Testimoni Hanif Pratama - Dropshipper Barang Unik" loading="eager" />
+            </button>
           </div>
-
-          <!-- Testimoni 2: Bagas Wicaksono -->
-          <div>
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Bagas Wicaksono</p>
-              <p class="text-[11px] text-zinc-400">SMM Agency</p>
-            </div>
-            <img src="testimoni/2.png" alt="Testimoni Bagas Wicaksono - SMM Agency" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 3: Bu Siti Rahayu -->
-          <div>
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Bu Siti Rahayu</p>
-              <p class="text-[11px] text-zinc-400">Owner Katering Rumahan</p>
-            </div>
-            <img src="testimoni/3.png" alt="Testimoni Bu Siti Rahayu - Owner Katering Rumahan" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 4: Fikri Ramadhan -->
-          <div>
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Fikri Ramadhan</p>
-              <p class="text-[11px] text-zinc-400">Affiliate Marketer</p>
-            </div>
-            <img src="testimoni/4.png" alt="Testimoni Fikri Ramadhan - Affiliate Marketer" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 5: Toni Setiawan -->
-          <div>
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Toni Setiawan</p>
-              <p class="text-[11px] text-zinc-400">Jasa Desain Freelance</p>
-            </div>
-            <img src="testimoni/5.png" alt="Testimoni Toni Setiawan - Jasa Desain Freelance" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 6: Dian Puspita -->
-          <div>
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Dian Puspita</p>
-              <p class="text-[11px] text-zinc-400">Kreator Produk Digital</p>
-            </div>
-            <img src="testimoni/6.png" alt="Testimoni Dian Puspita - Kreator Produk Digital" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 7: Hanif Pratama -->
-          <div>
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Hanif Pratama</p>
-              <p class="text-[11px] text-zinc-400">Dropshipper Barang Unik</p>
-            </div>
-            <img src="testimoni/7.png" alt="Testimoni Hanif Pratama - Dropshipper Barang Unik" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Duplicate for seamless loop -->
-
-          <!-- Testimoni 1 Duplicate -->
-          <div aria-hidden="true">
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Nadia Azzahra</p>
-              <p class="text-[11px] text-zinc-400">Seller Fashion Hijab</p>
-            </div>
-            <img src="testimoni/1.png" alt="Testimoni Nadia Azzahra - Seller Fashion Hijab" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 2 Duplicate -->
-          <div aria-hidden="true">
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Bagas Wicaksono</p>
-              <p class="text-[11px] text-zinc-400">SMM Agency</p>
-            </div>
-            <img src="testimoni/2.png" alt="Testimoni Bagas Wicaksono - SMM Agency" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 3 Duplicate -->
-          <div aria-hidden="true">
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Bu Siti Rahayu</p>
-              <p class="text-[11px] text-zinc-400">Owner Katering Rumahan</p>
-            </div>
-            <img src="testimoni/3.png" alt="Testimoni Bu Siti Rahayu - Owner Katering Rumahan" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 4 Duplicate -->
-          <div aria-hidden="true">
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Fikri Ramadhan</p>
-              <p class="text-[11px] text-zinc-400">Affiliate Marketer</p>
-            </div>
-            <img src="testimoni/4.png" alt="Testimoni Fikri Ramadhan - Affiliate Marketer" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 5 Duplicate -->
-          <div aria-hidden="true">
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Toni Setiawan</p>
-              <p class="text-[11px] text-zinc-400">Jasa Desain Freelance</p>
-            </div>
-            <img src="testimoni/5.png" alt="Testimoni Toni Setiawan - Jasa Desain Freelance" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 6 Duplicate -->
-          <div aria-hidden="true">
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Dian Puspita</p>
-              <p class="text-[11px] text-zinc-400">Kreator Produk Digital</p>
-            </div>
-            <img src="testimoni/6.png" alt="Testimoni Dian Puspita - Kreator Produk Digital" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
-          <!-- Testimoni 7 Duplicate -->
-          <div aria-hidden="true">
-            <div class="text-center mb-2.5">
-              <p class="text-sm font-bold text-white">Hanif Pratama</p>
-              <p class="text-[11px] text-zinc-400">Dropshipper Barang Unik</p>
-            </div>
-            <img src="testimoni/7.png" alt="Testimoni Hanif Pratama - Dropshipper Barang Unik" class="w-full h-auto block rounded-xl" loading="lazy" />
-          </div>
-
         </div>
+        <button type="button" class="testimoni-carousel-button" data-carousel-next aria-label="Testimoni berikutnya">
+          &rarr;
+        </button>
+        <div class="testimoni-carousel-dots" data-carousel-dots aria-label="Pilih testimoni"></div>
       </div>
     </section>
 
@@ -910,17 +995,6 @@
             ⚡ Sekali bayar untuk semua produk Anda.
           </p>
         </div>
-        <div
-          class="mt-4 rounded-2xl border border-dashed border-sunset-500/40 bg-sunset-500/10 p-3 flex items-center justify-center gap-2.5 shadow-inner">
-          <span class="text-xs font-semibold text-zinc-300">Kode Promo:</span>
-          <div class="inline-flex items-center gap-2 rounded-xl bg-black/60 border hairline px-3 py-1.5">
-            <span class="font-mono text-xs sm:text-sm font-black text-amber-300 tracking-wider">MARKETFIRST</span>
-            <button type="button" id="copyVoucherBtn" title="Salin Kode Promo" aria-label="Salin Kode Promo"
-              class="copy-btn text-sunset-300 hover:text-sunset-200 active:scale-90 transition pl-1.5 border-l hairline">
-              <span class="text-xs sm:text-sm">📋</span>
-            </button>
-          </div>
-        </div>
         <div class="my-6 space-y-3.5 text-left">
           <p class="text-[11px] font-mono font-bold uppercase tracking-wider text-sunset-400">Semua yang Anda Dapatkan
             Hari Ini:</p>
@@ -979,8 +1053,8 @@
           <span class="text-zinc-600">•</span>
           <span class="inline-flex items-center gap-0.5">♾️ Bebas Langganan</span>
         </div>
-        <p class="mt-2.5 text-center text-[9.5px] sm:text-[10.5px] text-zinc-500 whitespace-nowrap">
-          Masukkan kode promo saat checkout untuk menikmati potongan 49%.
+        <p class="mt-2.5 text-center text-[9.5px] sm:text-[10.5px] text-zinc-500">
+          Harga promo berlaku selama kuota pembeli tercepat masih tersedia.
         </p>
     </section>
 
@@ -1151,13 +1225,12 @@
         <details class="group soft-card rounded-2xl p-4 sm:p-5 text-left">
           <summary
             class="cursor-pointer list-none font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4">
-            <span>Bagaimana cara klaim diskon 49% &amp; 3 Bonus Gratis?</span>
+            <span>Bagaimana cara mendapatkan diskon 49% &amp; 3 Bonus Gratis?</span>
             <span class="transition group-open:rotate-180 text-sunset-400">▼</span>
           </summary>
           <p class="mt-3 text-xs sm:text-sm leading-relaxed text-zinc-400">
-            Cukup masukkan kode promo <strong class="text-sunset-300">MARKETFIRST</strong> di halaman checkout Lynk.id.
-            Harga akan otomatis terpotong dari Rp249.000 menjadi <strong class="text-amber-300">Rp127.000</strong> dan 3
-            E-Book Bonus Ekosistem langsung aktif untuk Anda akses.
+             Klik tombol checkout. Harga promo akan otomatis terpotong dari Rp249.000 menjadi
+             <strong class="text-amber-300">Rp127.000</strong> dan 3 E-Book Bonus Ekosistem langsung aktif untuk Anda akses.
           </p>
         </details>
       </div>
@@ -1208,18 +1281,248 @@
         document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
       }
 
-      const copyBtn = document.getElementById('copyVoucherBtn');
-      if (copyBtn) {
-        copyBtn.addEventListener('click', async () => {
-          const original = copyBtn.innerHTML;
-          try {
-            await navigator.clipboard.writeText('MARKETFIRST');
-            copyBtn.innerHTML = '<span class="text-xs text-emerald-300 font-bold whitespace-nowrap">✓ Tersalin</span>';
-          } catch (e) {
-            window.prompt('Salin kode promo:', 'MARKETFIRST');
+      const testimonialCarousel = document.querySelector('[data-testimonial-carousel]');
+      if (testimonialCarousel) {
+        const viewport = testimonialCarousel.querySelector('[data-carousel-viewport]');
+        const track = testimonialCarousel.querySelector('[data-carousel-track]');
+        const allCards = Array.from(track.querySelectorAll('[data-carousel-card]'));
+        const cardsByIndex = new Map(allCards.map(card => [Number(card.dataset.carouselCard), card]));
+        const prevButton = testimonialCarousel.querySelector('[data-carousel-prev]');
+        const nextButton = testimonialCarousel.querySelector('[data-carousel-next]');
+        const dotsContainer = testimonialCarousel.querySelector('[data-carousel-dots]');
+        const totalCards = allCards.length;
+        let activeIndex = 0;
+        let isMoving = false;
+        let dragPointerId = null;
+        let dragStartX = 0;
+        let dragDistance = 0;
+        let ignoreClickUntil = 0;
+        let finishTimer;
+        let autoPlayTimer = null;
+        let isHovered = false;
+
+        const normalizeIndex = index => (index + totalCards) % totalCards;
+
+        const stopAutoPlay = () => {
+          if (autoPlayTimer !== null) {
+            window.clearTimeout(autoPlayTimer);
+            autoPlayTimer = null;
           }
-          window.setTimeout(() => copyBtn.innerHTML = original, 2200);
+        };
+
+        const scheduleAutoPlay = () => {
+          stopAutoPlay();
+          if (isHovered || document.hidden) return;
+
+          autoPlayTimer = window.setTimeout(() => {
+            autoPlayTimer = null;
+            if (isHovered || document.hidden || isMoving) {
+              scheduleAutoPlay();
+              return;
+            }
+            move(1, true);
+          }, 5000);
+        };
+
+        const getStep = () => {
+          const card = track.querySelector('.testimoni-card');
+          if (!card) return 0;
+          const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+          return card.offsetWidth + gap;
+        };
+
+        const getCenteredOffset = position => {
+          const card = track.querySelector('.testimoni-card');
+          if (!card) return 0;
+          return (viewport.clientWidth - card.offsetWidth) / 2 - position * getStep();
+        };
+
+        const setTrackOffset = (position, animate) => {
+          track.style.transition = animate ? '' : 'none';
+          track.style.transform = `translate3d(${getCenteredOffset(position)}px, 0, 0)`;
+
+          if (!animate) {
+            void track.offsetWidth;
+            track.style.transition = '';
+          }
+        };
+
+        const updateState = index => {
+          Array.from(track.children).forEach(card => {
+            const isActive = Number(card.dataset.carouselCard) === index;
+            card.classList.toggle('is-active', isActive);
+            if (isActive) {
+              card.setAttribute('aria-current', 'true');
+            } else {
+              card.removeAttribute('aria-current');
+            }
+          });
+
+          Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
+            const isActive = dotIndex === index;
+            dot.classList.toggle('is-active', isActive);
+            dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+          });
+
+        };
+
+        const mountCards = (index, animate = false) => {
+          const visibleIndexes = [normalizeIndex(index - 1), index, normalizeIndex(index + 1)];
+          track.replaceChildren(...visibleIndexes.map(cardIndex => cardsByIndex.get(cardIndex)));
+          activeIndex = index;
+          updateState(activeIndex);
+          setTrackOffset(1, animate);
+        };
+
+        allCards.forEach((card, index) => {
+          card.addEventListener('click', () => {
+            if (performance.now() < ignoreClickUntil) return;
+            if (isMoving) return;
+            const selectedIndex = Number(card.dataset.carouselCard);
+            const previousIndex = normalizeIndex(activeIndex - 1);
+            const nextIndex = normalizeIndex(activeIndex + 1);
+
+            if (selectedIndex === previousIndex) {
+              move(-1);
+            } else if (selectedIndex === nextIndex) {
+              move(1);
+            } else if (selectedIndex !== activeIndex) {
+              stopAutoPlay();
+              mountCards(selectedIndex);
+              scheduleAutoPlay();
+            }
+          });
         });
+
+        const createDots = () => {
+          allCards.forEach((card, index) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'testimoni-carousel-dot';
+            dot.dataset.carouselIndex = index;
+            dot.setAttribute('aria-label', `Lihat testimoni ${index + 1} dari ${totalCards}`);
+            dot.addEventListener('click', () => {
+              if (isMoving) return;
+              stopAutoPlay();
+              mountCards(index);
+              scheduleAutoPlay();
+            });
+            dotsContainer.append(dot);
+          });
+        };
+
+        const move = (direction, isAutomatic = false) => {
+          if (isMoving) return;
+          if (!isAutomatic) stopAutoPlay();
+
+          isMoving = true;
+          const currentIndex = activeIndex;
+          const targetIndex = normalizeIndex(currentIndex + direction);
+          const incomingIndex = normalizeIndex(currentIndex + (direction > 0 ? 2 : -2));
+          const incomingCard = cardsByIndex.get(incomingIndex);
+          const targetPosition = direction > 0 ? 2 : 0;
+          let completed = false;
+
+          activeIndex = targetIndex;
+          track.append(incomingCard);
+          updateState(targetIndex);
+          window.requestAnimationFrame(() => setTrackOffset(targetPosition, true));
+
+          const finish = () => {
+            if (completed) return;
+            completed = true;
+            window.clearTimeout(finishTimer);
+            track.removeEventListener('transitionend', onTransitionEnd);
+            mountCards(targetIndex);
+            isMoving = false;
+            scheduleAutoPlay();
+          };
+
+          const onTransitionEnd = event => {
+            if (event.target === track && event.propertyName === 'transform') finish();
+          };
+
+          track.addEventListener('transitionend', onTransitionEnd);
+          finishTimer = window.setTimeout(finish, 600);
+        };
+
+        prevButton.addEventListener('click', () => move(-1));
+        nextButton.addEventListener('click', () => move(1));
+
+        testimonialCarousel.addEventListener('mouseenter', () => {
+          isHovered = true;
+          stopAutoPlay();
+        });
+
+        testimonialCarousel.addEventListener('mouseleave', () => {
+          isHovered = false;
+          if (!isMoving) scheduleAutoPlay();
+        });
+
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            stopAutoPlay();
+          } else if (!isHovered && !isMoving) {
+            scheduleAutoPlay();
+          }
+        });
+
+        viewport.addEventListener('keydown', event => {
+          if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            move(-1);
+          } else if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            move(1);
+          }
+        });
+
+        viewport.addEventListener('pointerdown', event => {
+          if (isMoving || !event.isPrimary || event.button > 0) return;
+          stopAutoPlay();
+          dragPointerId = event.pointerId;
+          dragStartX = event.clientX;
+          dragDistance = 0;
+          viewport.classList.add('is-dragging');
+          track.style.transition = 'none';
+          viewport.setPointerCapture(event.pointerId);
+        });
+
+        viewport.addEventListener('pointermove', event => {
+          if (event.pointerId !== dragPointerId) return;
+          dragDistance = event.clientX - dragStartX;
+          if (Math.abs(dragDistance) > 6) {
+            event.preventDefault();
+          }
+          track.style.transform = `translate3d(${getCenteredOffset(1) + dragDistance}px, 0, 0)`;
+        }, { passive: false });
+
+        const finishDrag = event => {
+          if (event.pointerId !== dragPointerId) return;
+          viewport.classList.remove('is-dragging');
+          if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+          dragPointerId = null;
+
+          const didSwipe = Math.abs(dragDistance) > 24;
+          if (didSwipe) {
+            ignoreClickUntil = performance.now() + 1000;
+            move(dragDistance < 0 ? 1 : -1);
+          } else {
+            setTrackOffset(1, true);
+            if (!isHovered) scheduleAutoPlay();
+          }
+
+        };
+
+        viewport.addEventListener('pointerup', finishDrag);
+        viewport.addEventListener('pointercancel', finishDrag);
+        window.addEventListener('resize', () => {
+          if (!isMoving) setTrackOffset(1, false);
+        });
+
+        createDots();
+        mountCards(activeIndex);
+        scheduleAutoPlay();
       }
 
       let activeStreamStep = 1;
@@ -1252,4 +1555,5 @@
     });
   </script>
 </body>
+
 </html>
